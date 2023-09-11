@@ -1,5 +1,5 @@
 import Navbar from "./components/Navigation/Navbar";
-import { Box, Container, Flex } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 import { Routes, Route } from "react-router-dom";
 import { Index } from "./content/Index";
 import { Projects } from "./content/Projects";
