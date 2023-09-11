@@ -50,12 +50,13 @@ export default function Navbar() {
             bg: "gray.900",
             color: "white",
           }}
+          animation={"3s infinite alternate slidein"}
         >
           {"<Charlie Melchiori />"}
         </Box>
         <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
           {Links.map((link) => (
-            <NavLink href={link.href}>{link.label}</NavLink>
+            <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
           ))}
         </HStack>
       </Flex>
