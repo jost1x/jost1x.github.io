@@ -1,4 +1,4 @@
-import { InfoIcon } from "@chakra-ui/icons";
+import { ExternalLinkIcon, InfoIcon } from "@chakra-ui/icons";
 import {
   Modal,
   ModalOverlay,
@@ -10,10 +10,21 @@ import {
   Box,
   Button,
   useDisclosure,
+  Link,
 } from "@chakra-ui/react";
+import ReactMarkdown from "react-markdown";
+import { decode } from "utf8";
 
-export function ModalExperience() {
+interface Props {
+  full_company: string;
+  content: string;
+  url: string;
+}
+
+export function ModalExperience(props: Props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { full_company, content, url } = props;
+
   return (
     <>
       <Box as={"button"} onClick={onOpen}>
@@ -22,16 +33,23 @@ export function ModalExperience() {
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent m={4}>
-          <ModalHeader>Modal Title</ModalHeader>
+        <ModalContent m={4} bg={"gray.800"} color="white" maxW={"2xl"}>
+          <ModalHeader>
+            {full_company}{" "}
+            <Link href={url} isExternal={true}>
+              <ExternalLinkIcon mx="2px" />
+            </Link>
+          </ModalHeader>
           <ModalCloseButton />
-          <ModalBody>
-            sadsadsad
+          <ModalBody m={4}>
+            <ReactMarkdown
+              children={decode(atob(content))}
+              disallowedElements={["code"]}
+            />
           </ModalBody>
-
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>
-              Close
+              Cerrar
             </Button>
           </ModalFooter>
         </ModalContent>

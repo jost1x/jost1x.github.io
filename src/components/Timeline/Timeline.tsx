@@ -53,7 +53,7 @@ export function Timeline() {
   );
 }
 
-const Card = ({ id, company, position, cycle }: Experience) => {
+const Card = ({ id, company, position, cycle, full_company, content, url }: Experience) => {
   // For even id show card on left side
   // For odd id show card on right side
   const isEvenId = id % 2 == 0;
@@ -97,7 +97,7 @@ const Card = ({ id, company, position, cycle }: Experience) => {
 
         <VStack spacing={2} mb={3} textAlign="left" alignItems={"baseline"}>
           <chakra.h1 fontSize="lg" lineHeight={1.2} fontWeight="bold" w="100%" alignItems={"center"}>
-            <ModalExperience />{" "}
+            <ModalExperience full_company={full_company} content={content} url={url} />{" "}
             {company}
           </chakra.h1>
           <Text fontSize="md">{position}</Text>

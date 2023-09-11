@@ -8,4 +8,7 @@ interface Experience {
   company: string;
   position: string;
   cycle: CycleWork;
+  full_company: string;
+  content: string;
+  url: string;
 }
