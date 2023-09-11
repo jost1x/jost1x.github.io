@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "company": "Empresas Electrónicas Micrológica S.A.",
+        "position": "Técnico en Electronica",
+        "cycle": {
+            "start": "DIC 2013",
+            "end": "FEB 2014"
+        }
+    },
+    {
+        "id": 2,
+        "company": "Centro de Microdatos",
+        "position": "Soporte Proyecto Encuesta Casen",
+        "cycle": {
+            "start": "AGO 2016",
+            "end": "OCT 2016"
+        }
+    },
+    {
+        "id": 3,
+        "company": "PIRD - UTEM",
+        "position": "Desarrollador de Dispositivos",
+        "cycle": {
+            "start": "AGO 2018",
+            "end": "DIC 2018"
+        }
+    },
+    {
+        "id": 4,
+        "company": "SilocyData",
+        "position": "Técnico Electronico",
+        "cycle": {
+            "start": "OCT 2019",
+            "end": "DIC 2019"
+        }
+    },
+    {
+        "id": 5,
+        "company": "PERNC - UTEM",
+        "position": "Desarrollador de Software y Hardware",
+        "cycle": {
+            "start": "MAR 2019",
+            "end": "AGO 2023"
+        }
+    },
+    {
+        "id": 6,
+        "company": "Laboratorio Suelos - UTEM",
+        "position": "Desarrollador de Sistemas y Aplicaciones Web",
+        "cycle": {
+            "start": "AGO 2022",
+            "end": "SEP 2023"
+        }
+    }
+]
