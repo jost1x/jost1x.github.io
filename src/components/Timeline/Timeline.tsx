@@ -11,7 +11,6 @@ import {
 } from "@chakra-ui/react";
 
 import myExperience from "../../data/experience.json";
-import { InfoIcon, PhoneIcon } from "@chakra-ui/icons";
 import { ModalExperience } from "./Modal";
 
 export function Timeline() {
