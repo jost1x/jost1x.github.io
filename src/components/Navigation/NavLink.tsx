@@ -1,4 +1,5 @@
-import { Box } from "@chakra-ui/react";
+import { Link as ReactRouterLink } from "react-router-dom";
+import { Link as ChakraLink } from "@chakra-ui/react";
 
 interface Props {
   href: string;
@@ -9,8 +10,9 @@ export default function NavLink(props: Props) {
   const { href, children } = props;
 
   return (
-    <Box
-      as="a"
+    <ChakraLink
+      as={ReactRouterLink}
+      to={href}
       px={2}
       py={1}
       rounded={"md"}
@@ -18,9 +20,8 @@ export default function NavLink(props: Props) {
         textDecoration: "none",
         bg: "gray.900",
       }}
-      href={href}
     >
       {children}
-    </Box>
+    </ChakraLink>
   );
 }
