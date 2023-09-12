@@ -2,7 +2,7 @@ import { Box, Heading, Container, Text, Stack } from "@chakra-ui/react";
 
 export default function Hero() {
   return (
-    <Container maxW={"5xl"}>
+    <Container maxW={"4xl"}>
       <Stack
         as={Box}
         textAlign={"justify"}

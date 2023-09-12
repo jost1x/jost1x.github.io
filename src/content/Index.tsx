@@ -18,7 +18,7 @@ export function Index() {
             <Heading as="h1" fontSize="2xl">
               Experiencia Laboral
             </Heading>
-            <Timeline />
+              <Timeline />
           </VStack>
         </Box>
       </>

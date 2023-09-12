@@ -17,8 +17,16 @@ export function Projects() {
           <Heading as="h1" fontSize="2xl" mb={5}>
             Proyectos
           </Heading>
-          {myProjects.map((project) => (
-            <CardProject key={project.title} {...project}></CardProject>
+          {myProjects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.5, delay: index * 0.1 }}
+            >
+              <CardProject {...project} />
+            </motion.div>
           ))}
         </VStack>
       </Box>

@@ -22,5 +22,13 @@
             {"label": "Grafana"}, {"label": "NodeRED"}, {"label": "ESP8266"}, {"label": "InfluxDB"}, {"label": "PostgreSQL"}
         ],
         "img": "./images/dashboard_ecc2023_panel.jpeg"
+    },
+    {
+        "title": "Monitoreo plantinera Coopeumo",
+        "desc": "Desarrollo de sistema de monitoreo de gestión energética para Cooperativa Coopeumo",
+        "tags": [
+            {"label": "Grafana"}, {"label": "NodeRED"}, {"label": "ESP8266"}, {"label": "InfluxDB"}, {"label": "PostgreSQL"}
+        ],
+        "img": "./images/dashboard_smartcoopeumo.jpg"
     }
 ]

@@ -31,6 +31,7 @@ export function CardProject(props: Props) {
       bg={"gray.700"}
       width={"100%"}
       maxW={"3xl"}
+      mb={"5px"}
     >
       <Image
         objectFit="cover"

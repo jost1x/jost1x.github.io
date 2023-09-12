@@ -12,13 +12,14 @@ import {
 
 import myExperience from "../../data/experience.json";
 import { ModalExperience } from "./Modal";
+import { motion } from "framer-motion";
 
 export function Timeline() {
   const isMobile = useBreakpointValue({ base: true, md: false });
   const isDesktop = useBreakpointValue({ base: false, md: true });
 
   return (
-    <Container maxWidth="6xl" p={{ base: 2, sm: 5 }}>
+    <Container maxWidth="6xl" p={{ base: 2, sm: 0 }} mt={{ base: 2, md: 10}} mb={{ base: 2, md: 10}}>
       {myExperience.map((experience) => (
         <Flex key={experience.id} mb="10px">
           {/* Desktop view(left card) */}
@@ -26,7 +27,7 @@ export function Timeline() {
             <>
               <EmptyCard />
               <LineWithDot />
-              <Card {...experience} />
+                <Card {...experience} />
             </>
           )}
 
@@ -53,7 +54,15 @@ export function Timeline() {
   );
 }
 
-const Card = ({ id, company, position, cycle, full_company, content, url }: Experience) => {
+const Card = ({
+  id,
+  company,
+  position,
+  cycle,
+  full_company,
+  content,
+  url,
+}: Experience) => {
   // For even id show card on left side
   // For odd id show card on right side
   const isEvenId = id % 2 == 0;
@@ -96,8 +105,18 @@ const Card = ({ id, company, position, cycle, full_company, content, url }: Expe
         </Text>
 
         <VStack spacing={2} mb={3} textAlign="left" alignItems={"baseline"}>
-          <chakra.h1 fontSize="lg" lineHeight={1.2} fontWeight="bold" w="100%" alignItems={"center"}>
-            <ModalExperience full_company={full_company} content={content} url={url} />{" "}
+          <chakra.h1
+            fontSize="lg"
+            lineHeight={1.2}
+            fontWeight="bold"
+            w="100%"
+            alignItems={"center"}
+          >
+            <ModalExperience
+              full_company={full_company}
+              content={content}
+              url={url}
+            />{" "}
             {company}
           </chakra.h1>
           <Text fontSize="md">{position}</Text>

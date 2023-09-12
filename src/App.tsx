@@ -14,7 +14,7 @@ export function App() {
         <Container maxW="container.lg" color={"white"}>
           <Navbar />
         </Container>
-        <Container maxW="container.md" color={"white"} flexGrow={1}>
+        <Container maxW="container.md" color={"white"} flexGrow={1} mb={"15px"}>
           <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<Index />} />
