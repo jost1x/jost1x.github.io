@@ -59,8 +59,8 @@ export function CardProject(props: Props) {
           </Box>
         </CardBody>
 
-        <CardFooter>
-          <Flex alignItems={"left"} minWidth="max-content" display={"none"}>
+        <CardFooter display={"none"}>
+          <Flex alignItems={"left"} minWidth="max-content">
             <Spacer />
             <ButtonGroup gap="2">
               <Button variant="solid" colorScheme="blue">

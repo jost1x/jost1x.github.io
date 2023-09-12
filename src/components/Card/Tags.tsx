@@ -13,6 +13,7 @@ export function IndividualTag(props: Props) {
     variant: "solid",
     colorScheme: "gray",
     mr: "5px",
+    mb: "5px"
   };
 
   return <Tag {...style} key={`${children}-1`}>{children}</Tag>;
