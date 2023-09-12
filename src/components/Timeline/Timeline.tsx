@@ -12,7 +12,6 @@ import {
 
 import myExperience from "../../data/experience.json";
 import { ModalExperience } from "./Modal";
-import { motion } from "framer-motion";
 
 export function Timeline() {
   const isMobile = useBreakpointValue({ base: true, md: false });
