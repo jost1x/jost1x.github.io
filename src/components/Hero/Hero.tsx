@@ -1,4 +1,20 @@
-import { Box, Heading, Container, Text, Stack } from "@chakra-ui/react";
+import {
+  GithubFilled,
+  GitlabFilled,
+  LinkedinFilled,
+  MailFilled,
+} from "@ant-design/icons";
+import {
+  Box,
+  Heading,
+  Container,
+  Text,
+  Stack,
+  Card,
+  CardBody,
+  Link,
+} from "@chakra-ui/react";
+import { ContactIcon } from "./ContactIcon";
 
 export default function Hero() {
   return (
@@ -26,6 +42,26 @@ export default function Hero() {
           conocer más sobre mi trayectoria profesional. ¡Gracias por visitar mi
           sitio web!
         </Text>
+        <Box alignItems={"center"} textAlign={"center"} width={"100%"}>
+          <Card maxW={"sm"} mx={"auto"} bg={"gray.700"}>
+            <CardBody fontSize={"4xl"} color={"white"}>
+              <ul style={{ display: "inline-flex", listStyleType: "none" }}>
+                <ContactIcon href="https://www.linkedin.com/in/ch-melchiori/">
+                  <LinkedinFilled />
+                </ContactIcon>
+                <ContactIcon href="https://github.com/jost1x">
+                  <GithubFilled />
+                </ContactIcon>
+                <ContactIcon href="https://gitlab.com/jost1x">
+                  <GitlabFilled />
+                </ContactIcon>
+                <ContactIcon href="mailto:ch.mel95cl@gmail.com">
+                  <MailFilled />
+                </ContactIcon>
+              </ul>
+            </CardBody>
+          </Card>
+        </Box>
       </Stack>
     </Container>
   );

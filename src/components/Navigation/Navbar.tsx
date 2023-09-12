@@ -16,12 +16,12 @@ const Links: Array<LinksWithRef> = [
     href: "./#",
   },
   {
-    label: "Proyectos",
-    href: "./projects",
+    label: "Skills",
+    href: "./skills",
   },
   {
-    label: "Contacto",
-    href: "./contact",
+    label: "Proyectos",
+    href: "./projects",
   },
 ];
 
