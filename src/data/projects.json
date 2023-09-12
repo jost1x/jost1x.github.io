@@ -5,7 +5,7 @@
         "tags": [
             {"label": "React"}, {"label": "Cirrus-UI"}
         ],
-        "img": "./images/website_labsuelosutem.png"
+        "img": "./images/website_labsuelosutem.webp"
     },
     {
         "title": "Panel de Monitoreo Escuela de Cambio Climático 2022",
@@ -13,7 +13,7 @@
         "tags": [
             {"label": "Grafana"}, {"label": "NodeRED"}, {"label": "ESP8266"}, {"label": "InfluxDB"}, {"label": "PostgreSQL"}
         ],
-        "img": "./images/dashboard_ecc2022.jpeg"
+        "img": "./images/dashboard_ecc2022.webp"
     },
     {
         "title": "Panel de Monitoreo Escuela de Cambio Climático 2023",
@@ -21,7 +21,7 @@
         "tags": [
             {"label": "Grafana"}, {"label": "NodeRED"}, {"label": "ESP8266"}, {"label": "InfluxDB"}, {"label": "PostgreSQL"}
         ],
-        "img": "./images/dashboard_ecc2023_panel.jpeg"
+        "img": "./images/dashboard_ecc2023_panel.webp"
     },
     {
         "title": "Monitoreo plantinera Coopeumo",
@@ -29,6 +29,6 @@
         "tags": [
             {"label": "Grafana"}, {"label": "NodeRED"}, {"label": "ESP8266"}, {"label": "InfluxDB"}, {"label": "PostgreSQL"}
         ],
-        "img": "./images/dashboard_smartcoopeumo.jpg"
+        "img": "./images/dashboard_smartcoopeumo.webp"
     }
 ]
