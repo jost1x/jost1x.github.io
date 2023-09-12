@@ -5,6 +5,7 @@ import { Index } from "./content/Index";
 import { Projects } from "./content/Projects";
 import { Contact } from "./content/Contact";
 import { Footer } from "./components/Footer/Footer";
+import { AnimatePresence } from "framer-motion";
 
 export function App() {
   return (
@@ -14,11 +15,13 @@ export function App() {
           <Navbar />
         </Container>
         <Container maxW="container.md" color={"white"} flexGrow={1}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+          <AnimatePresence mode="wait">
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </AnimatePresence>
         </Container>
       </Container>
       <Footer></Footer>
