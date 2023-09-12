@@ -1,6 +1,9 @@
 import { VStack, Heading, Box } from "@chakra-ui/react";
 import { CardProject } from "../components/Card/CardProject";
 
+import myProjects from "../data/projects.json"
+
+
 export function Projects() {
   return (
     <Box py={{ base: 20, md: 12 }}>
@@ -8,10 +11,11 @@ export function Projects() {
         <Heading as="h1" fontSize="2xl" mb={5}>
           Proyectos
         </Heading>
-
-        <CardProject></CardProject>
-        <CardProject></CardProject>
-        <CardProject></CardProject>
+        {
+          myProjects.map((project) => (
+            <CardProject key={project.title} {...project}></CardProject>
+          ))
+        }
       </VStack>
     </Box>
   );

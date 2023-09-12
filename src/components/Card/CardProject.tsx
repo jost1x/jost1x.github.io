@@ -10,9 +10,20 @@ import {
   Flex,
   Spacer,
   ButtonGroup,
+  Box,
 } from "@chakra-ui/react";
+import { IndividualTag } from "./Tags";
 
-export function CardProject() {
+interface Props {
+  title: string;
+  desc: string;
+  tags: Array<TagsProps>;
+  img: string;
+}
+
+export function CardProject(props: Props) {
+  const { title, desc, tags, img } = props;
+
   return (
     <Card
       direction={{ base: "column", sm: "row" }}
@@ -24,7 +35,7 @@ export function CardProject() {
       <Image
         objectFit="cover"
         maxW={{ base: "100%", sm: "200px" }}
-        src="https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
+        src={img}
         alt="Caffe Latte"
         m={5}
         rounded={"md"}
@@ -34,18 +45,24 @@ export function CardProject() {
       <Stack>
         <CardBody>
           <Heading size="md" color={"white"}>
-            Proyecto #1
+            {title}
           </Heading>
 
-          <Text py="2" color={"white"}> 
-            test... asdasdsa dasd asd asdas da
+          <Text py="2" color={"white"}>
+            {desc}
           </Text>
+
+          <Box>
+            {tags.map((tag) => (
+              <IndividualTag key={tag.label}>{tag.label}</IndividualTag>
+            ))}
+          </Box>
         </CardBody>
 
         <CardFooter>
-          <Flex alignItems={"left"} minWidth='max-content'>
+          <Flex alignItems={"left"} minWidth="max-content" display={"none"}>
             <Spacer />
-            <ButtonGroup gap='2'>
+            <ButtonGroup gap="2">
               <Button variant="solid" colorScheme="blue">
                 Más info
               </Button>

@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Sitio Web Laboratorio Suelos UTEM",
+        "desc": "Desarrollo de Sitio Web personalizado para Laboratorio de Suelos de la Universidad Tecnológica Metropolitana.",
+        "tags": [
+            {"label": "React"}, {"label": "Cirrus-UI"}
+        ],
+        "img": "./images/website_labsuelosutem.png"
+    },
+    {
+        "title": "Panel de Monitoreo Escuela de Cambio Climático 2022",
+        "desc": "Desarrollo de un Sistema de monitoreo Energético para la ejecución de la escuela de cambio climático UTEM 2022.",
+        "tags": [
+            {"label": "Grafana"}, {"label": "NodeRED"}, {"label": "ESP8266"}, {"label": "InfluxDB"}
+        ],
+        "img": "./images/dashboard_ecc2022.jpeg"
+    }
+]
