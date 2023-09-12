@@ -12,7 +12,6 @@ import {
   Stack,
   Card,
   CardBody,
-  Link,
 } from "@chakra-ui/react";
 import { ContactIcon } from "./ContactIcon";
 
