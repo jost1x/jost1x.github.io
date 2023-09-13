@@ -3,7 +3,7 @@ import React from "react";
 
 interface Props {
   text: string;
-  icon: object;
+  icon: any;
 }
 
 export function SkillCard(props: Props) {
