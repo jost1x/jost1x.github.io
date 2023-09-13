@@ -37,7 +37,6 @@ import {
   SiFastapi,
   SiPydantic,
   SiFlask,
-  SiAlchemy
 } from "@icons-pack/react-simple-icons";
 import { ReactComponent as PlatformIO } from "../assets/platformio.svg";
 
@@ -80,8 +79,8 @@ export const _skills: Skill = {
   RaspberryPI: <SiRaspberrypi />,
   GitLab: <SiGitlab />,
   Tasmota: <SiTasmota />,
-  "Home Assistant": <SiHomeassistant/>,
-  Flask: <SiFlask/>,
+  "Home Assistant": <SiHomeassistant />,
+  Flask: <SiFlask />,
   FastAPI: <SiFastapi />,
-  Pydantic: <SiPydantic />
+  Pydantic: <SiPydantic />,
 };
