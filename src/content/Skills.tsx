@@ -1,6 +1,6 @@
 import { VStack, Heading, Box, SimpleGrid } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { SkillCard } from "../components/Card/SkillCard";
+import { SkillCardV2 } from "../components/Card/SkillCard";
 import { _skills } from "./SkillList";
 
 export function Skills() {
@@ -27,15 +27,15 @@ export function Skills() {
             >
               {Object.keys(_skills).map((skillName, index) => (
                 <motion.div
-                  style={{ flex: "1", minWidth: "120px" }}
+                  style={{ flex: "1" }}
                   key={skillName}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 1, delay: index * 0.02 }}
                 >
-                  <Box height={"100px"} flex={1} style={{ minWidth: "120px" }}>
-                    <SkillCard
+                  <Box flex={1} style={{ minWidth: "150px" }}>
+                    <SkillCardV2
                       key={skillName + "-1"}
                       text={skillName}
                       icon={_skills[skillName]}
