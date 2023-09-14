@@ -1,5 +1,5 @@
 import { Link as ReactRouterLink } from "react-router-dom";
-import { Link as ChakraLink } from "@chakra-ui/react";
+import { Link as ChakraLink, useColorModeValue } from "@chakra-ui/react";
 
 interface Props {
   href: string;
@@ -18,7 +18,8 @@ export default function NavLink(props: Props) {
       rounded={"md"}
       _hover={{
         textDecoration: "none",
-        bg: "gray.900",
+        bg: useColorModeValue("gray.300", "gray.900"),
+        color: useColorModeValue("gray.800", "white")
       }}
     >
       {children}

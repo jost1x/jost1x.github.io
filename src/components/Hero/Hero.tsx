@@ -12,6 +12,7 @@ import {
   Stack,
   Card,
   CardBody,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { ContactIcon } from "./ContactIcon";
 
@@ -42,8 +43,15 @@ export default function Hero() {
           sitio web!
         </Text>
         <Box alignItems={"center"} textAlign={"center"} width={"100%"}>
-          <Card maxW={"sm"} mx={"auto"} bg={"gray.700"}>
-            <CardBody fontSize={"4xl"} color={"white"}>
+          <Card
+            maxW={"sm"}
+            mx={"auto"}
+            bg={useColorModeValue("gray.100", "gray.700")}
+          >
+            <CardBody
+              fontSize={"4xl"}
+              color={useColorModeValue("gray.700", "white")}
+            >
               <ul style={{ display: "inline-flex", listStyleType: "none" }}>
                 <ContactIcon href="https://www.linkedin.com/in/ch-melchiori/">
                   <LinkedinFilled />

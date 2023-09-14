@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardBody, Heading, HStack } from "@chakra-ui/react";
+import { Card, CardHeader, CardBody, Heading, HStack, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
 
 interface Props {
@@ -17,7 +17,7 @@ export function SkillCard(props: Props) {
   };
 
   return (
-    <Card size={"sm"} bg={"gray.700"} color={"white"}>
+    <Card size={"sm"} bg={useColorModeValue("gray.100", "gray.700")} color={"white"}>
       <CardHeader
         textAlign={"center"}
         alignItems={"center"}
@@ -48,11 +48,11 @@ export function SkillCardV2(props: Props) {
     margin: "auto",
     height: "40px",
     "aspect-ratio": "1/2",
-    fill: "white",
+    fill: useColorModeValue("#2D3748", "white"),
   };
 
   return (
-    <Card size={"sm"} bg={"gray.700"} color={"white"} p={0}>
+    <Card size={"sm"} bg={useColorModeValue("gray.100", "gray.700")} color={useColorModeValue("gray.700", "white")} p={0}>
       <HStack>
         <CardHeader
           textAlign={"center"}

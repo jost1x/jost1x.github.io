@@ -11,6 +11,7 @@ import {
   Spacer,
   ButtonGroup,
   Box,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { IndividualTag } from "./Tags";
 
@@ -28,10 +29,11 @@ export function CardProject(props: Props) {
     <Card
       direction={{ base: "column", sm: "row" }}
       overflow="hidden"
-      bg={"gray.700"}
+      bg={useColorModeValue("gray.100", "gray.700")}
       width={"100%"}
       maxW={"3xl"}
       mb={"5px"}
+      color={useColorModeValue("gray.800", "white")}
     >
       <Image
         objectFit="cover"
@@ -45,11 +47,11 @@ export function CardProject(props: Props) {
 
       <Stack>
         <CardBody>
-          <Heading size="md" color={"white"}>
+          <Heading size="md">
             {title}
           </Heading>
 
-          <Text py="2" color={"white"}>
+          <Text py="2">
             {desc}
           </Text>
 

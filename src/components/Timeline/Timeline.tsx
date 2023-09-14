@@ -80,16 +80,17 @@ const Card = ({
     <HStack
       flex={1}
       p={{ base: 3, sm: 6 }}
-      bg={"gray.700"}
+      bg={useColorModeValue("gray.100", "gray.700")}
       spacing={5}
       rounded="lg"
       alignItems="center"
       pos="relative"
+      color={useColorModeValue("gray.700", "white")}
       _before={{
         content: `""`,
         w: "0",
         h: "0",
-        borderColor: `transparent #2D3748 transparent`,
+        borderColor: `transparent ${useColorModeValue("#EDF2F7", "#2D3748")} transparent`,
         borderStyle: "solid",
         borderWidth: borderWidthValue,
         position: "absolute",
@@ -97,6 +98,7 @@ const Card = ({
         right: rightValue,
         display: "block",
       }}
+      
     >
       <Box>
         <Text fontSize="lg" color={isEvenId ? "teal.400" : "blue.400"}>

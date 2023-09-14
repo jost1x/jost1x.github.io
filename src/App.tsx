@@ -1,5 +1,5 @@
 import Navbar from "./components/Navigation/Navbar";
-import { Container } from "@chakra-ui/react";
+import { Container, useColorModeValue } from "@chakra-ui/react";
 import { Routes, Route } from "react-router-dom";
 import { Index } from "./content/Index";
 import { Projects } from "./content/Projects";
@@ -11,10 +11,10 @@ export function App() {
   return (
     <>
       <Container maxW={"100%"} p={0} overflow={"initial"}>
-        <Container maxW="container.lg" color={"white"}>
+        <Container maxW="container.lg" color={useColorModeValue("gray.700", "white")}>
           <Navbar />
         </Container>
-        <Container maxW="container.md" color={"white"} flexGrow={1} mb={"35px"}>
+        <Container maxW="container.md" color={useColorModeValue("gray.700", "white")} flexGrow={1} mb={"35px"}>
           <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<Index />} />

@@ -11,6 +11,7 @@ import {
   Button,
   useDisclosure,
   Link,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import ReactMarkdown from "react-markdown";
 import { decode } from "utf8";
@@ -33,7 +34,7 @@ export function ModalExperience(props: Props) {
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent m={4} bg={"gray.800"} color="white" maxW={"2xl"}>
+        <ModalContent m={4} color={useColorModeValue("gray.700", "white")} maxW={"2xl"}>
           <ModalHeader>
             {full_company}{" "}
             <Link href={url} isExternal={true}>

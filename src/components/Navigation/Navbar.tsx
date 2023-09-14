@@ -5,10 +5,12 @@ import {
   IconButton,
   useDisclosure,
   Stack,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 import NavLink from "./NavLink";
+import { ThemeSwitcher } from "../ThemeSwitcher";
 
 const Links: Array<LinksWithRef> = [
   {
@@ -29,7 +31,7 @@ export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box color="white" px={4}>
+    <Box color={useColorModeValue("gray.700", "white")} px={4}>
       <Flex h={20} alignItems={"center"} justifyContent={"space-between"}>
         <IconButton
           size={"md"}
@@ -40,20 +42,21 @@ export default function Navbar() {
         />
         <Box
           fontWeight="extrabold"
-          fontSize="2xl"
-          color="gray.400"
+          fontSize={{base: "lg", sm:"2xl", lg:"2xl"}}
+          color={useColorModeValue("gray.700", "gray.400")}
           px={2}
           py={1}
           rounded={"md"}
           _hover={{
             textDecoration: "none",
-            bg: "gray.900",
-            color: "white",
+            bg: useColorModeValue("gray.300", "gray.900"),
+            color: useColorModeValue("gray.800", "white"),
           }}
           animation={"3s infinite alternate slidein"}
         >
           {"<Charlie Melchiori />"}
-        </Box>
+          
+        </Box><ThemeSwitcher></ThemeSwitcher>
         <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
           {Links.map((link) => (
             <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
