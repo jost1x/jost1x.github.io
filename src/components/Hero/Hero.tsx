@@ -62,7 +62,7 @@ export default function Hero() {
                 <ContactIcon href="https://gitlab.com/jost1x">
                   <GitlabFilled />
                 </ContactIcon>
-                <ContactIcon href="mailto:ch.mel95cl@gmail.com">
+                <ContactIcon href="mailto:charlie.melchiorip@gmail.cl">
                   <MailFilled />
                 </ContactIcon>
               </ul>
