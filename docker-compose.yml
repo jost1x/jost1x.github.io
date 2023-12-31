@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  website:
+    container_name: bun-serve
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 5k
+    ports:
+      - 3000:3000

@@ -1,0 +1,12 @@
+---
+import ComponentSkills from "../components/Skills.astro";
+import Base from "../layouts/Base.astro";
+
+const title = import.meta.env.APP_NAME;
+
+---
+
+<Base title={title}>
+  <h2 class="py-10 pb-8 font-bold text-2xl dark:text-white text-slate-800">Skills</h2>
+  <ComponentSkills></ComponentSkills>
+</Base>
