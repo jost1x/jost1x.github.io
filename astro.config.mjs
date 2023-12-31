@@ -1,4 +1,3 @@
-import netlify from "@astrojs/netlify";
 import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
@@ -7,5 +6,4 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   integrations: [tailwind(), icon()],
   output: "server",
-  adapter: netlify()
 });
