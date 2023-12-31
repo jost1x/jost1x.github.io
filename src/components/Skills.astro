@@ -1,0 +1,104 @@
+---
+
+import SkillGroup from "./SkillGroup.astro";
+
+const skills = [
+  { name: "Amazonaws", icon: "simple-icons:amazonaws" },
+  { name: "Arduino", icon: "simple-icons:arduino" },
+  { name: "Bun", icon: "simple-icons:bun" },
+  { name: "CSS3", icon: "simple-icons:css3" },
+  { name: "Digitalocean", icon: "simple-icons:digitalocean" },
+  { name: "Directus", icon: "simple-icons:directus" },
+  { name: "Docker", icon: "simple-icons:docker" },
+  { name: "Espressif", icon: "simple-icons:espressif" },
+  { name: "Fastapi", icon: "simple-icons:fastapi" },
+  { name: "Flask", icon: "simple-icons:flask" },
+  { name: "Git", icon: "simple-icons:git" },
+  { name: "Gitlab", icon: "simple-icons:gitlab" },
+  { name: "Googlecloud", icon: "simple-icons:googlecloud" },
+  { name: "Grafana", icon: "simple-icons:grafana" },
+  { name: "Homeassistant", icon: "simple-icons:homeassistant" },
+  { name: "HTML5", icon: "simple-icons:html5" },
+  { name: "InfluxDB", icon: "simple-icons:influxdb" },
+  { name: "JavaScript", icon: "simple-icons:javascript" },
+  { name: "Linux", icon: "simple-icons:linux" },
+  { name: "MariaDB", icon: "simple-icons:mariadb" },
+  { name: "Microsoft", icon: "simple-icons:microsoft" },
+  { name: "Mikrotik", icon: "simple-icons:mikrotik" },
+  { name: "MQTT", icon: "simple-icons:mqtt" },
+  { name: "MySQL", icon: "simple-icons:mysql" },
+  { name: "NodeJS", icon: "simple-icons:nodedotjs" },
+  { name: "NodeRED", icon: "simple-icons:nodered" },
+  { name: "PHP", icon: "simple-icons:php" },
+  { name: "PostgreSQL", icon: "simple-icons:postgresql" },
+  { name: "Pydantic", icon: "simple-icons:pydantic" },
+  { name: "Python", icon: "simple-icons:python" },
+  { name: "RaspberryPI", icon: "simple-icons:raspberrypi" },
+  { name: "React", icon: "simple-icons:react" },
+  { name: "STMicroelectronics", icon: "simple-icons:stmicroelectronics" },
+  { name: "Tasmota", icon: "simple-icons:tasmota" },
+  { name: "Traefik Proxy", icon: "simple-icons:traefikproxy" },
+  { name: "Ubiquiti", icon: "simple-icons:ubiquiti" },
+  { name: "Vite", icon: "simple-icons:vite" },
+  { name: "Wordpress", icon: "simple-icons:wordpress" }
+];
+
+const skillsByCategory = {
+  Cloud: [
+    { name: "Amazon Web Services", icon: "simple-icons:amazonaws" },
+    { name: "Digitalocean", icon: "simple-icons:digitalocean" },
+    { name: "Google Cloud", icon: "simple-icons:googlecloud" }
+  ],
+  Programming: [
+    { name: "Arduino", icon: "simple-icons:arduino" },
+    { name: "CSS3", icon: "simple-icons:css3" },
+    { name: "JavaScript", icon: "simple-icons:javascript" },
+    { name: "Python", icon: "simple-icons:python" },
+    { name: "NodeJS", icon: "simple-icons:nodedotjs" },
+    { name: "PHP", icon: "simple-icons:php" },
+  ],
+  Databases: [
+    { name: "MariaDB", icon: "simple-icons:mariadb" },
+    { name: "MySQL", icon: "simple-icons:mysql" },
+    { name: "PostgreSQL", icon: "simple-icons:postgresql" },
+  ],
+  Tools: [
+    { name: "Docker", icon: "simple-icons:docker" },
+    { name: "Git", icon: "simple-icons:git" },
+  ],
+  Other: [
+    { name: "Bun", icon: "simple-icons:bun" },
+    { name: "Directus", icon: "simple-icons:directus" },
+    { name: "Espressif", icon: "simple-icons:espressif" },
+    { name: "Fastapi", icon: "simple-icons:fastapi" },
+    { name: "Flask", icon: "simple-icons:flask" },
+    { name: "Grafana", icon: "simple-icons:grafana" },
+    { name: "Homeassistant", icon: "simple-icons:homeassistant" },
+    { name: "HTML5", icon: "simple-icons:html5" },
+    { name: "InfluxDB", icon: "simple-icons:influxdb" },
+    { name: "Linux", icon: "simple-icons:linux" },
+    { name: "Microsoft", icon: "simple-icons:microsoft" },
+    { name: "Mikrotik", icon: "simple-icons:mikrotik" },
+    { name: "MQTT", icon: "simple-icons:mqtt" },
+    { name: "NodeRED", icon: "simple-icons:nodered" },
+    { name: "PostgreSQL", icon: "simple-icons:postgresql" },
+    { name: "Pydantic", icon: "simple-icons:pydantic" },
+    { name: "RaspberryPI", icon: "simple-icons:raspberrypi" },
+    { name: "React", icon: "simple-icons:react" },
+    { name: "STMicroelectronics", icon: "simple-icons:stmicroelectronics" },
+    { name: "Tasmota", icon: "simple-icons:tasmota" },
+    { name: "Traefik Proxy", icon: "simple-icons:traefikproxy" },
+    { name: "Ubiquiti", icon: "simple-icons:ubiquiti" },
+    { name: "Vite", icon: "simple-icons:vite" },
+    { name: "Wordpress", icon: "simple-icons:wordpress" }
+  ]
+};
+
+
+---
+
+<SkillGroup label="Cloud" skills={skillsByCategory.Cloud} />
+<SkillGroup label="Database" skills={skillsByCategory.Databases} />
+<SkillGroup label="Herramientas" skills={skillsByCategory.Tools} />
+<SkillGroup label="Programación" skills={skillsByCategory.Programming} />
+<SkillGroup label="Otros" skills={skillsByCategory.Other} />

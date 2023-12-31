@@ -1,0 +1,29 @@
+---
+import Themes from "astro-themes";
+---
+
+<Themes defaultTheme="dark" />
+
+<div>
+  <button id="ToggleTheme"><slot /></button>
+</div>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const button = document.getElementById("ToggleTheme");
+    document.dispatchEvent(
+      new CustomEvent("set-theme", { detail: localStorage.getItem("theme") }),
+    );
+
+    button.addEventListener("click", () => {
+      const actualTheme =
+        document.documentElement.attributes.getNamedItem("data-theme")?.value ==
+        "dark"
+          ? "light"
+          : "dark";
+      document.dispatchEvent(
+        new CustomEvent("set-theme", { detail: actualTheme }),
+      );
+    });
+  });
+</script>
