@@ -2,47 +2,6 @@
 
 import SkillGroup from "./SkillGroup.astro";
 
-const skills = [
-  { name: "Amazonaws", icon: "simple-icons:amazonaws" },
-  { name: "Arduino", icon: "simple-icons:arduino" },
-  { name: "Bun", icon: "simple-icons:bun" },
-  { name: "CSS3", icon: "simple-icons:css3" },
-  { name: "Digitalocean", icon: "simple-icons:digitalocean" },
-  { name: "Directus", icon: "simple-icons:directus" },
-  { name: "Docker", icon: "simple-icons:docker" },
-  { name: "Espressif", icon: "simple-icons:espressif" },
-  { name: "Fastapi", icon: "simple-icons:fastapi" },
-  { name: "Flask", icon: "simple-icons:flask" },
-  { name: "Git", icon: "simple-icons:git" },
-  { name: "Gitlab", icon: "simple-icons:gitlab" },
-  { name: "Googlecloud", icon: "simple-icons:googlecloud" },
-  { name: "Grafana", icon: "simple-icons:grafana" },
-  { name: "Homeassistant", icon: "simple-icons:homeassistant" },
-  { name: "HTML5", icon: "simple-icons:html5" },
-  { name: "InfluxDB", icon: "simple-icons:influxdb" },
-  { name: "JavaScript", icon: "simple-icons:javascript" },
-  { name: "Linux", icon: "simple-icons:linux" },
-  { name: "MariaDB", icon: "simple-icons:mariadb" },
-  { name: "Microsoft", icon: "simple-icons:microsoft" },
-  { name: "Mikrotik", icon: "simple-icons:mikrotik" },
-  { name: "MQTT", icon: "simple-icons:mqtt" },
-  { name: "MySQL", icon: "simple-icons:mysql" },
-  { name: "NodeJS", icon: "simple-icons:nodedotjs" },
-  { name: "NodeRED", icon: "simple-icons:nodered" },
-  { name: "PHP", icon: "simple-icons:php" },
-  { name: "PostgreSQL", icon: "simple-icons:postgresql" },
-  { name: "Pydantic", icon: "simple-icons:pydantic" },
-  { name: "Python", icon: "simple-icons:python" },
-  { name: "RaspberryPI", icon: "simple-icons:raspberrypi" },
-  { name: "React", icon: "simple-icons:react" },
-  { name: "STMicroelectronics", icon: "simple-icons:stmicroelectronics" },
-  { name: "Tasmota", icon: "simple-icons:tasmota" },
-  { name: "Traefik Proxy", icon: "simple-icons:traefikproxy" },
-  { name: "Ubiquiti", icon: "simple-icons:ubiquiti" },
-  { name: "Vite", icon: "simple-icons:vite" },
-  { name: "Wordpress", icon: "simple-icons:wordpress" }
-];
-
 const skillsByCategory = {
   Cloud: [
     { name: "Amazon Web Services", icon: "simple-icons:amazonaws" },
@@ -65,6 +24,7 @@ const skillsByCategory = {
   Tools: [
     { name: "Docker", icon: "simple-icons:docker" },
     { name: "Git", icon: "simple-icons:git" },
+    {name: "PlatformIO", icon: "simple-icons:platformio"}
   ],
   Other: [
     { name: "Bun", icon: "simple-icons:bun" },
