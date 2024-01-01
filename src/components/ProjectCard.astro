@@ -1,0 +1,22 @@
+---
+import { getEntryBySlug } from "astro:content";
+
+const { slug } = Astro.props;
+
+const entry = await getEntryBySlug("projects", slug);
+
+const { Content, headings, remarkPluginFrontmatter } = await entry.render();
+
+---
+
+<div
+  class="flex dark:border-spacing-2 flex-col lg:flex-row gap-5 border-2 p-2 rounded-md border-slate-500 bg-slate-300 dark:border-slate-700 dark:bg-slate-950"
+>
+  <div id="projectImage" class="lg:max-w-[400px]">
+    <Content />
+  </div>
+  <div>
+    <h3 class="font-bold text-slate-800 dark:text-slate-100 text-lg">{entry.data.title}</h3>
+    <h4 class="font-normal text-slate-600 dark:text-slate-400 text-pretty">{entry.data.desc}</h4>
+  </div>
+</div>

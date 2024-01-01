@@ -14,14 +14,6 @@ div#Logo {
   @apply z-50 opacity-100;
 }
 
-/*
-
-.tooltip {
-  @apply opacity-0 transition-opacity duration-300 ease-in-out;
+#projectImage img {
+  @apply rounded-md
 }
-
-.tooltip.visible {
-  @apply opacity-100 z-50;
-}
-
-*/
