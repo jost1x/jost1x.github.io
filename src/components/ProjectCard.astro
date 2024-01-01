@@ -6,7 +6,6 @@ const { slug } = Astro.props;
 const entry = await getEntryBySlug("projects", slug);
 
 const { Content, headings, remarkPluginFrontmatter } = await entry.render();
-
 ---
 
 <div
@@ -16,7 +15,22 @@ const { Content, headings, remarkPluginFrontmatter } = await entry.render();
     <Content />
   </div>
   <div>
-    <h3 class="font-bold text-slate-800 dark:text-slate-100 text-lg">{entry.data.title}</h3>
-    <h4 class="font-normal text-slate-600 dark:text-slate-400 text-pretty">{entry.data.desc}</h4>
+    <h3 class="font-bold text-slate-800 dark:text-slate-100 text-lg">
+      {entry.data.title}
+    </h3>
+    <h4 class="font-normal text-slate-600 dark:text-slate-400 text-pretty">
+      {entry.data.desc}
+    </h4>
+    <div class="flex gap-2 mt-2 flex-wrap">
+      {
+        entry.data.tags.map((tag: string, index) => {
+          return (
+            <span class="text-white bg-slate-800 px-2 py-0 rounded-md">
+              {tag}
+            </span>
+          );
+        })
+      }
+    </div>
   </div>
 </div>
