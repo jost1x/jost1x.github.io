@@ -1,64 +1,90 @@
 ---
-
 import SkillGroup from "./SkillGroup.astro";
 
 const skillsByCategory = {
   Cloud: [
     { name: "Amazon Web Services", icon: "simple-icons:amazonaws" },
     { name: "Digitalocean", icon: "simple-icons:digitalocean" },
-    { name: "Google Cloud", icon: "simple-icons:googlecloud" }
+    { name: "Google Cloud", icon: "simple-icons:googlecloud" },
   ],
   Programming: [
     { name: "Arduino", icon: "simple-icons:arduino" },
+    { name: "HTML5", icon: "simple-icons:html5" },
     { name: "CSS3", icon: "simple-icons:css3" },
     { name: "JavaScript", icon: "simple-icons:javascript" },
     { name: "Python", icon: "simple-icons:python" },
-    { name: "NodeJS", icon: "simple-icons:nodedotjs" },
     { name: "PHP", icon: "simple-icons:php" },
   ],
   Databases: [
     { name: "MariaDB", icon: "simple-icons:mariadb" },
     { name: "MySQL", icon: "simple-icons:mysql" },
     { name: "PostgreSQL", icon: "simple-icons:postgresql" },
+    { name: "InfluxDB", icon: "simple-icons:influxdb" },
+    { name: "SQLite", icon: "simple-icons:sqlite" },
   ],
   Tools: [
     { name: "Docker", icon: "simple-icons:docker" },
     { name: "Git", icon: "simple-icons:git" },
-    {name: "PlatformIO", icon: "simple-icons:platformio"}
+    { name: "PlatformIO", icon: "simple-icons:platformio" },
+  ],
+  OS: [
+    { name: "Windows", icon: "simple-icons:windows" },
+    { name: "Linux", icon: "simple-icons:linux" },
+  ],
+  Network: [
+    { name: "Cisco", icon: "simple-icons:cisco" },
+    { name: "Ubiquiti", icon: "simple-icons:ubiquiti" },
+    { name: "Mikrotik", icon: "simple-icons:mikrotik" },
   ],
   Other: [
-    { name: "Bun", icon: "simple-icons:bun" },
     { name: "Directus", icon: "simple-icons:directus" },
     { name: "Espressif", icon: "simple-icons:espressif" },
-    { name: "Fastapi", icon: "simple-icons:fastapi" },
-    { name: "Flask", icon: "simple-icons:flask" },
     { name: "Grafana", icon: "simple-icons:grafana" },
+    { name: "STMicroelectronics", icon: "simple-icons:stmicroelectronics" },
+    { name: "Traefik Proxy", icon: "simple-icons:traefikproxy" },
+    { name: "Wordpress", icon: "simple-icons:wordpress" },
+  ],
+  IoT: [
+    { name: "RaspberryPI", icon: "simple-icons:raspberrypi" },
     { name: "Homeassistant", icon: "simple-icons:homeassistant" },
-    { name: "HTML5", icon: "simple-icons:html5" },
-    { name: "InfluxDB", icon: "simple-icons:influxdb" },
-    { name: "Linux", icon: "simple-icons:linux" },
-    { name: "Microsoft", icon: "simple-icons:microsoft" },
-    { name: "Mikrotik", icon: "simple-icons:mikrotik" },
     { name: "MQTT", icon: "simple-icons:mqtt" },
     { name: "NodeRED", icon: "simple-icons:nodered" },
-    { name: "PostgreSQL", icon: "simple-icons:postgresql" },
-    { name: "Pydantic", icon: "simple-icons:pydantic" },
-    { name: "RaspberryPI", icon: "simple-icons:raspberrypi" },
-    { name: "React", icon: "simple-icons:react" },
-    { name: "STMicroelectronics", icon: "simple-icons:stmicroelectronics" },
     { name: "Tasmota", icon: "simple-icons:tasmota" },
-    { name: "Traefik Proxy", icon: "simple-icons:traefikproxy" },
-    { name: "Ubiquiti", icon: "simple-icons:ubiquiti" },
+  ],
+  JsTools: [
+    { name: "NodeJS", icon: "simple-icons:nodedotjs" },
+    { name: "Bun", icon: "simple-icons:bun" },
     { name: "Vite", icon: "simple-icons:vite" },
-    { name: "Wordpress", icon: "simple-icons:wordpress" }
-  ]
+    { name: "React", icon: "simple-icons:react" },
+    { name: "Astro", icon: "simple-icons:astro" },
+  ],
+  PyTools: [
+    { name: "Fastapi", icon: "simple-icons:fastapi" },
+    { name: "Flask", icon: "simple-icons:flask" },
+    { name: "Pydantic", icon: "simple-icons:pydantic" },
+    { name: "Qt (PyQT5)", icon: "simple-icons:qt" },
+  ],
 };
-
-
 ---
 
-<SkillGroup label="Cloud" skills={skillsByCategory.Cloud} />
-<SkillGroup label="Database" skills={skillsByCategory.Databases} />
-<SkillGroup label="Herramientas" skills={skillsByCategory.Tools} />
-<SkillGroup label="Programación" skills={skillsByCategory.Programming} />
-<SkillGroup label="Otros" skills={skillsByCategory.Other} />
+<div class="flex flex-wrap flex-grow gap-4">
+  <SkillGroup label="Arquitecturas Cloud" skills={skillsByCategory.Cloud} />
+  <SkillGroup label="Bases de datos" skills={skillsByCategory.Databases} />
+  <SkillGroup label="Herramientas" skills={skillsByCategory.Tools} />
+  <SkillGroup
+    label="Lenguajes de programación"
+    skills={skillsByCategory.Programming}
+  />
+  <SkillGroup label="Sistema Operativos" skills={skillsByCategory.OS} />
+  <SkillGroup label="Redes" skills={skillsByCategory.Network} />
+  <SkillGroup label="Internet de las Cosas" skills={skillsByCategory.IoT} />
+  <SkillGroup
+    label="Librerias, Framework, Herramientas JS"
+    skills={skillsByCategory.JsTools}
+  />
+  <SkillGroup
+    label="Librerias y Herramientas Python"
+    skills={skillsByCategory.PyTools}
+  />
+  <SkillGroup label="Otros" skills={skillsByCategory.Other} />
+</div>
