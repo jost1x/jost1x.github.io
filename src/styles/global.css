@@ -6,13 +6,12 @@ div#Logo {
   font-family: "Onest Variable", sans-serif;
 }
 
-
 .tooltip {
-  @apply opacity-0 absolute transition-opacity duration-300 ease-in-out;
+  @apply absolute opacity-0 transition-opacity duration-300 ease-in-out;
 }
 
 .has-tooltip:hover .tooltip {
-  @apply opacity-100 z-50;
+  @apply z-50 opacity-100;
 }
 
 /*
