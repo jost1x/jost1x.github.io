@@ -7,5 +7,8 @@ import htmlBeautifier from "astro-html-beautifier";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), icon(), htmlBeautifier()],
-  output: "static"
+  output: "static",
+  build: {
+    format: 'file'
+  }
 });
