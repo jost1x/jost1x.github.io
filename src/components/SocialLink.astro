@@ -1,12 +1,13 @@
 ---
-const { href } = Astro.props;
+const { href, aria } = Astro.props;
 ---
 
 <a
   href={href}
   target="_blank"
   class="inline-block transition duration-300 transform hover:scale-125 hover:text-slate-500"
-><div class="min-w-[48px] min-h-[48px]" >
-  <slot />
-</div>
+  aria-hidden="true"
+  ><div class="min-w-[48px] min-h-[48px]"> 
+    <slot />
+  </div>
 </a>
