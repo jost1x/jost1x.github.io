@@ -9,6 +9,6 @@ export default defineConfig({
   integrations: [tailwind(), icon(), htmlBeautifier()],
   output: "static",
   build: {
-    format: 'file'
-  }
+    format: "file",
+  },
 });

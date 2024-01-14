@@ -15,5 +15,5 @@ div#Logo {
 }
 
 #projectImage img {
-  @apply rounded-md
+  @apply rounded-md;
 }
