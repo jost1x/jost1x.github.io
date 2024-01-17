@@ -3,37 +3,43 @@ import { Icon } from "astro-icon/components";
 
 const { skills, label } = Astro.props;
 
-const skillsCols =
-  skills.length >= 5 ? `lg:grid` : '';
+const skillsCols = skills.length >= 5 ? `lg:grid` : "";
 ---
 
 <div
-  class="border-spacing-1 border-2 p-4 rounded-md bg-slate-500 border-slate-400 dark:bg-slate-950 dark:border-slate-800 grow"
+  class="grow border-spacing-1 rounded-md border-2 border-slate-400 bg-slate-500 p-4 dark:border-slate-800 dark:bg-slate-950"
 >
   <h3
-    class="text-center lg:text-left font-bold text-xl text-slate-200 dark:text-slate-200"
+    class="text-center text-xl font-bold text-slate-200 dark:text-slate-200 lg:text-left"
   >
     {label}
   </h3>
 
-  <div
-    class=`flex flex-wrap gap-2 lg:gap-6 items-center justify-center mt-2`
-  >
+
+
+
+  <div class=`flex flex-wrap gap-2 lg:gap-6 items-center justify-center mt-2`>
     {
       skills.map((skill: { name: unknown; icon: any }, index: any) => {
         return (
-          <div class="has-tooltip max-w-fit mx-auto">
-            <span class="tooltip p-1 rounded bg-slate-700 text-white font-semibold">
-              {skill.name}
-            </span>
-            <div class="bg-slate-400 dark:bg-slate-800 py-1 px-1 flex-grow-0 flex flex-row-reverse rounded-md items-center text-center text-slate-100 dark:text-slate-200">
-              <span class="font-semibold p-1 hidden">{skill.name}</span>
+          <>
+            <div class="has-tooltip mx-auto max-w-fit">
+              <span class="tooltip rounded bg-slate-700 p-1 font-semibold text-white">
+                {skill.name}
+              </span>
+              <div class="flex flex-grow-0 flex-row-reverse items-center rounded-md bg-slate-400 px-1 py-1 text-center text-slate-100 dark:bg-slate-800 dark:text-slate-200">
+                <span class="hidden p-1 font-semibold">{skill.name}</span>
 
-              <div class="mx-auto p-1  text-slate-100 dark:text-slate-200 max-w-fit">
-                <Icon name={skill.icon} size={32} style={"aspect-ratio: 1/1"} />
+                <div class="mx-auto max-w-fit  p-1 text-slate-100 dark:text-slate-200">
+                  <Icon
+                    name={skill.icon}
+                    size={32}
+                    style={"aspect-ratio: 1/1"}
+                  />
+                </div>
               </div>
             </div>
-          </div>
+          </>
         );
       })
     }

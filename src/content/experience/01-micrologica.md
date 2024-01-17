@@ -1,6 +1,6 @@
 ---
 company: Empresas Electrónicas Micrológica S.A.
-position: Técnico en Electronica
+position: Técnico Electrónico
 url: https://micrologica.cl/
 
 start: "2013-12"

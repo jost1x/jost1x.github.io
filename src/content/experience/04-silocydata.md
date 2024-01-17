@@ -1,6 +1,6 @@
 ---
 company: SilocyData
-position: Técnico Electronico
+position: Técnico Electrónico
 url: https://silocydata.cl/
 
 start: "2019-10"

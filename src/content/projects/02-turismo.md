@@ -1,6 +1,6 @@
 ---
 title: Red privada Proyecto FIC Turismo
-desc: Desarrollo de una red privada utilizando enlaces dentro de Reserva Nacional Rio Clarillo
+desc: Desarrollo de una red privada utilizando enlaces dentro de Reserva Nacional Río Clarillo
 tags: ["Grafana", "NodeRED", "ESP8266", "InfluxDB", "Ubiquiti", "Mikrotik"]
 ---
 
