@@ -1,16 +1,15 @@
 "use client"
 
-import { DesktopNav } from "@/components/navbar/DesktopNav"
-import { Logo } from "@/components/navbar/Logo"
-import { MobileMenu } from "@/components/navbar/MobileMenu"
 import { MobileMenuButton } from "@/components/navbar/MobileMenuButton"
+import { Navigation } from "@/components/navbar/Navigation"
+import { SocialLinks } from "@/components/navbar/SocialLinks"
 import { cn } from "@/lib/utils"
-import { useEffect, useState } from "react"
+import { useEffect, useState, type JSX } from "react"
 
-export function Navbar() {
-  const [activeItem, setActiveItem] = useState("inicio")
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+export function Navbar(): JSX.Element {
+  const [activeItem, setActiveItem] = useState<string>("inicio")
+  const [isScrolled, setIsScrolled] = useState<boolean>(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
@@ -18,7 +17,7 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const handleNavigate = (id: string) => {
+  const handleNavigate = (id: string): void => {
     setActiveItem(id)
     setIsMobileMenuOpen(false)
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
@@ -35,25 +34,20 @@ export function Navbar() {
         )}
       >
         <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
-          <Logo isScrolled={isScrolled} onClick={() => handleNavigate("inicio")} />
-          <DesktopNav
+          <Navigation
             activeItem={activeItem}
             isScrolled={isScrolled}
+            isMobileMenuOpen={isMobileMenuOpen}
             onNavigate={handleNavigate}
+            onCloseMobileMenu={() => setIsMobileMenuOpen(false)}
           />
           <MobileMenuButton
             isOpen={isMobileMenuOpen}
             onToggle={() => setIsMobileMenuOpen((v) => !v)}
           />
+          <SocialLinks />
         </div>
       </header>
-
-      <MobileMenu
-        isOpen={isMobileMenuOpen}
-        activeItem={activeItem}
-        onClose={() => setIsMobileMenuOpen(false)}
-        onNavigate={handleNavigate}
-      />
     </>
   )
 }
