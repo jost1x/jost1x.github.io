@@ -15,7 +15,7 @@ export interface SocialLink {
 
 export const socialLinks: SocialLink[] = [
   {
-    href: "https://github.com/ch-melchiori",
+    href: "https://github.com/jost1x",
     label: "GitHub",
     Icon: Github,
   },
