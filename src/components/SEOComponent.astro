@@ -1,0 +1,52 @@
+---
+import { SEO } from "astro-seo";
+---
+
+<SEO
+  title="Charlie Melchiori | Ingeniero Civil Electrónico · IoT & IIoT"
+  titleTemplate="%s — Portafolio Profesional"
+  titleDefault="Charlie Melchiori | Ingeniero Civil Electrónico"
+  description="Ingeniero Civil Electrónico especializado en IoT, IIoT y sistemas embebidos. Experiencia en plataformas cloud, sensorización industrial, minería, energías renovables y desarrollo full-stack."
+  canonical="https://jost1x.github.io" 
+  openGraph={{
+    basic: {
+      title: "Ingeniero Civil Electrónico especializado en IoT e Industria 4.0",
+      type: "website",
+      image: "https://jost1x.github.io/og-image.png",
+      url: "https://jost1x.github.io",
+    },
+    optional: {
+      siteName: "Portafolio Charlie Melchiori",
+      description:
+        "Desarrollo de soluciones IoT e IIoT para industria, minería y monitoreo ambiental. Sistemas embebidos, cloud y visualización de datos en tiempo real.",
+      locale: "es_CL",
+    },
+  }}
+  extend={{
+    link: [
+      { rel: "icon", href: "/favicon.ico" },
+      { rel: "author", href: "https://github.com/jost1x" },
+      { rel: "me", href: "https://www.linkedin.com/in/ch-melchiori/" },
+      { rel: "me", href: "https://gitlab.com/jost1x" },
+    ],
+    meta: [
+      {
+        name: "author",
+        content: "Charlie Melchiori",
+      },
+      {
+        name: "keywords",
+        content:
+          "Ingeniero Civil Electrónico, IoT, IIoT, Sistemas Embebidos, Industria 4.0, Cloud, Minería, Energía, React, TypeScript, Chile",
+      },
+      {
+        name: "language",
+        content: "Spanish",
+      },
+      {
+        name: "contact",
+        content: "charlie.melchiorip@gmail.com",
+      },
+    ],
+  }}
+/>
