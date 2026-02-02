@@ -39,8 +39,34 @@ const projects = defineCollection({
   }),
 });
 
+const education = defineCollection({
+  type: "content",
+  schema: z.object({
+    institution: z.string(),
+    degree: z.string(),
+    field: z.string().optional(),
+    startDate: z.date(),
+    endDate: z.date().nullable(),
+    type: z.enum(["degree", "technical", "academic"]),
+    summary: z.string().max(160).optional(),
+  }),
+});
+
+const certifications = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    issuer: z.string(),
+    date: z.date(),
+    category: z.enum(["cloud", "data", "development", "management"]),
+    credentialUrl: z.string().url().optional(),
+  }),
+});
+
 export const collections = {
   skills,
   experience,
   projects,
+  education,
+  certifications
 };
