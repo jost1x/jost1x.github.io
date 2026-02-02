@@ -1,12 +1,8 @@
 ---
-import { Github, Linkedin } from "@lucide/astro";
-import { navItems, socialLinks } from "./data";
+import { iconMap, navItems, socialLinks } from "./data";
 import NavItem from "./NavItem.astro";
 
-const iconMap = {
-  github: Github,
-  linkedin: Linkedin,
-};
+
 
 const activeId = navItems[0]?.id;
 ---

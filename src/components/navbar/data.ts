@@ -1,3 +1,5 @@
+import { Github, Linkedin } from "@lucide/astro";
+
 export const navItems = [
   { id: "index", label: "Inicio" },
   { id: "about", label: "Sobre mí" },
@@ -6,7 +8,13 @@ export const navItems = [
   { id: "contact", label: "Contacto" },
 ];
 
-export type SocialLinkIcon = "github" | "linkedin";
+export type SocialLinkIcon = "github" | "linkedin"| "gitlab";
+
+export const iconMap = {
+  github: Github,
+  linkedin: Linkedin,
+  gitlab: Linkedin,
+};
 
 export interface SocialLink {
   href: string;
@@ -24,5 +32,9 @@ export const socialLinks: SocialLink[] = [
     href: "https://linkedin.com/in/ch-melchiori",
     label: "LinkedIn",
     icon: "linkedin",
+  },  {
+    href: "https://gitlab.com/jost1x",
+    label: "GitLab",
+    icon: "gitlab",
   },
 ];
