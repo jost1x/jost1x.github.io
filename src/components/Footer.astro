@@ -1,0 +1,44 @@
+---
+import { Github, Linkedin, Mail } from "lucide-react";
+
+const socialLinks = [
+  {
+    icon: Github,
+    href: "https://github.com/jost1x",
+    label: "GitHub",
+  },
+  {
+    icon: Linkedin,
+    href: "https://linkedin.com/in/ch-melchiori",
+    label: "LinkedIn",
+  },
+  {
+    icon: Mail,
+    href: "mailto:charlie.melchiorip@gmail.com",
+    label: "Email",
+  },
+];
+---
+
+<footer class="py-8 px-6 border-t border-white/6">
+  <div
+    class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-muted-foreground text-xs"
+  >
+    <p>2024 Charlie Melchiori</p>
+    <div class="flex items-center gap-4">
+      {
+        socialLinks.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.label}
+            class="hover:text-primary transition-colors duration-300"
+          >
+            {<link.icon />}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</footer>

@@ -1,10 +1,10 @@
 import { Github, Linkedin } from "lucide-react";
 
 export const navItems = [
-  { id: "inicio", label: "Inicio" },
-  { id: "sobre-mi", label: "Sobre mí" },
-  { id: "proyectos", label: "Proyectos" },
-  { id: "contacto", label: "Contacto" },
+  { id: "index", label: "Inicio" },
+  { id: "about", label: "Sobre mí" },
+  { id: "projects", label: "Proyectos" },
+  { id: "contact", label: "Contacto" },
 ];
 
 export interface SocialLink {

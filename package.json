@@ -10,11 +10,11 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
-    "@lucide/astro": "^0.562.0",
+    "@lucide/astro": "^0.563.0",
     "@tailwindcss/vite": "^4.1.18",
     "@types/react-dom": "^19.2.3",
     "add": "^2.0.6",
-    "astro": "^5.16.16",
+    "astro": "^5.17.1",
     "astro-html-beautifier": "^1.0.4",
     "astro-seo": "^1.1.0",
     "class-variance-authority": "^0.7.1",

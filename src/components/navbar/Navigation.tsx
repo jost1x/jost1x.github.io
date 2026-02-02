@@ -42,23 +42,19 @@ export function Navigation({
         </div>
       </nav>
 
+      {isMobileMenuOpen && (
+        <div
+          onClick={onCloseMobileMenu}
+          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden pointer-events-auto"
+        />
+      )}
+
       <div
         className={cn(
-          "fixed inset-0 z-40 md:hidden transition-all duration-500",
-          isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none",
+          "fixed top-0 right-0 h-screen w-72 bg-linear-to-b from-[oklch(0.12_0.05_250)] to-[oklch(0.08_0.03_250)] border-l border-white/6 p-8 pt-24 transition-transform duration-500 z-50 md:hidden overflow-y-auto",
+          isMobileMenuOpen ? "translate-x-0 pointer-events-auto" : "translate-x-full pointer-events-none",
         )}
       >
-        <div
-          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-          onClick={onCloseMobileMenu}
-        />
-
-        <div
-          className={cn(
-            "absolute top-0 right-0 h-full w-72 bg-linear-to-b from-[oklch(0.12_0.05_250)] to-[oklch(0.08_0.03_250)] border-l border-white/6 p-8 pt-24 transition-transform duration-500",
-            isMobileMenuOpen ? "translate-x-0" : "translate-x-full",
-          )}
-        >
           <nav className="flex flex-col gap-2">
             {navItems.map((item) => (
               <NavItem
@@ -84,7 +80,6 @@ export function Navigation({
             ))}
           </div>
         </div>
-      </div>
     </>
   );
 }
