@@ -1,7 +1,7 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z } from "astro:content";
 
 const skills = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     name: z.string(),
     icon: z.string().optional(),
@@ -12,6 +12,20 @@ const skills = defineCollection({
   }),
 });
 
+const experience = defineCollection({
+  type: "content",
+  schema: z.object({
+    company: z.string(),
+    position: z.string(),
+    location: z.string().optional(),
+    startDate: z.date(),
+    endDate: z.date().nullable(),
+    summary: z.string().max(180),
+    website: z.string().url().optional(),
+  }),
+});
+
 export const collections = {
   skills,
+  experience,
 };

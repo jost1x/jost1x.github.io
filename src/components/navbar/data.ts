@@ -3,6 +3,7 @@ import { Github, Linkedin } from "lucide-react";
 export const navItems = [
   { id: "index", label: "Inicio" },
   { id: "about", label: "Sobre mí" },
+  { id: "experience", label: "Experiencia" },
   { id: "projects", label: "Proyectos" },
   { id: "contact", label: "Contacto" },
 ];
