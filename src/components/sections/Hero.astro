@@ -27,45 +27,45 @@ const socialLinks = [
 ];
 ---
 
-<section id="index" class="min-h-screen flex items-center px-6 pt-20">
-  <div class="max-w-5xl mx-auto w-full">
+<section id="index" class="flex min-h-screen items-center px-6 pt-20">
+  <div class="mx-auto w-full max-w-5xl">
     {/* Greeting */}
-    <p class="text-muted-foreground text-lg md:text-xl mb-4">Hola, Soy</p>
+    <p class="text-muted-foreground mb-4 text-lg md:text-xl">Hola, Soy</p>
 
     {/* Name with badge */}
-    <div class="flex flex-wrap items-center gap-4 mb-6">
+    <div class="mb-6 flex flex-wrap items-center gap-4">
       <h1
-        class="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground"
+        class="text-foreground text-4xl font-semibold md:text-5xl lg:text-6xl"
       >
         Charlie Melchiori
       </h1>
       <span
-        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/8 backdrop-blur-sm text-xs text-foreground"
+        class="text-foreground inline-flex items-center gap-2 rounded-full border border-white/8 bg-white/8 px-3 py-1.5 text-xs backdrop-blur-sm"
       >
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-400"></span>
         Disponible
       </span>
     </div>
 
     {/* Description with highlighted words */}
     <p
-      class="text-muted-foreground text-base md:text-lg leading-relaxed max-w-2xl mb-8"
+      class="text-muted-foreground mb-8 max-w-2xl text-base leading-relaxed md:text-lg"
     >
       <span
-        class="inline-flex items-center px-2.5 py-0.5 rounded-md bg-primary/20 text-primary border border-primary/30 font-medium mr-1"
+        class="bg-primary/20 text-primary border-primary/30 mr-1 inline-flex items-center rounded-md border px-2.5 py-0.5 font-medium"
       >
         Ingeniero Civil Electrónico
       </span>
       , apasionado por la informática y la tecnología. Este portafolio refleja un
       compromiso con la{" "}
       <span
-        class="inline-flex items-center px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-medium"
+        class="inline-flex items-center rounded-md border border-emerald-500/30 bg-emerald-500/20 px-2 py-0.5 font-medium text-emerald-400"
       >
         excelencia
       </span>
       {" "}y la{" "}
       <span
-        class="inline-flex items-center px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-400 border border-amber-500/30 font-medium"
+        class="inline-flex items-center rounded-md border border-amber-500/30 bg-amber-500/20 px-2 py-0.5 font-medium text-amber-400"
       >
         innovación
       </span>
@@ -76,9 +76,9 @@ const socialLinks = [
     <a
       href="https://rxresu.me/jost1x/charlie-melchiori-ing-cvl-electronico"
       target="_blank"
-      class="inline-flex items-center gap-2 px-6 py-3 mb-10 rounded-xl  text-foreground text-sm font-medium border border-white/6 bg-white/3 backdrop-blur-md transition-all duration-300 hover:border-primary/20 hover:bg-white/6"
+      class="text-foreground hover:border-primary/20 mb-10 inline-flex items-center gap-2 rounded-xl border border-white/6 bg-white/3 px-6 py-3 text-sm font-medium backdrop-blur-md transition-all duration-300 hover:bg-white/6"
     >
-      <FileText class="w-4 h-4" />
+      <FileText class="h-4 w-4" />
       Ver Currículum
     </a>
 
@@ -91,7 +91,7 @@ const socialLinks = [
             target="_blank"
             rel="noopener noreferrer"
             aria-label={link.label}
-            class="p-3 rounded-xl text-muted-foreground border border-white/6 bg-white/3 backdrop-blur-md transition-all duration-300 hover:border-primary/20 hover:bg-white/7"
+            class="text-muted-foreground hover:border-primary/20 rounded-xl border border-white/6 bg-white/3 p-3 backdrop-blur-md transition-all duration-300 hover:bg-white/7"
           >
             {<link.icon />}
           </a>

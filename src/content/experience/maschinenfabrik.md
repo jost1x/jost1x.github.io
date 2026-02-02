@@ -8,7 +8,6 @@ summary: "Desarrollo de soluciones IIoT y plataformas Industria 4.0 para operaci
 website: "https://www.mafabrik.cl/"
 ---
 
-
 - Desarrollo de sistemas **IIoT (Industrial Internet of Things)** para el sector minero.
 - Diseño e implementación de plataformas de **sensorización en operaciones mineras**.
 - Diseño de **arquitecturas cloud** para transmisión, almacenamiento y análisis de datos IoT.

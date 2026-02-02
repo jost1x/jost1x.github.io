@@ -8,11 +8,11 @@ import SocialLinks from "./SocialLinks.astro";
 
 <header
   data-navbar
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-5 bg-transparent"
+  class="fixed top-0 right-0 left-0 z-50 bg-transparent py-5 transition-all duration-500"
   data-scroll-on="py-3 bg-gradient-to-r from-[oklch(0.10_0.04_250/0.9)] to-[oklch(0.08_0.035_250/0.85)] backdrop-blur-xl border-b border-white/6"
   data-scroll-off="py-5 bg-transparent"
 >
-  <div class="max-w-5xl mx-auto px-6 flex items-center justify-between">
+  <div class="mx-auto flex max-w-5xl items-center justify-between px-6">
     <Logo />
 
     <DesktopNav />
@@ -32,7 +32,8 @@ import SocialLinks from "./SocialLinks.astro";
     if (!root || root.dataset.initialized === "true") return;
     root.dataset.initialized = "true";
 
-    const scrollTargets = document.querySelectorAll<HTMLElement>("[data-scroll-on]");
+    const scrollTargets =
+      document.querySelectorAll<HTMLElement>("[data-scroll-on]");
 
     const applyScrollState = (scrolled) => {
       scrollTargets.forEach((el) => {
@@ -53,7 +54,7 @@ import SocialLinks from "./SocialLinks.astro";
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     const navItems = Array.from(
-      document.querySelectorAll<HTMLElement>("[data-nav-item]")
+      document.querySelectorAll<HTMLElement>("[data-nav-item]"),
     );
 
     const setActive = (id) => {
@@ -98,7 +99,7 @@ import SocialLinks from "./SocialLinks.astro";
       if (mobileToggle) {
         mobileToggle.setAttribute(
           "aria-label",
-          open ? "Cerrar menú" : "Abrir menú"
+          open ? "Cerrar menú" : "Abrir menú",
         );
       }
       document.body.style.overflow = open ? "hidden" : "";

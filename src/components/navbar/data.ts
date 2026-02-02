@@ -8,7 +8,7 @@ export const navItems = [
   { id: "contact", label: "Contacto" },
 ];
 
-export type SocialLinkIcon = "github" | "linkedin"| "gitlab";
+export type SocialLinkIcon = "github" | "linkedin" | "gitlab";
 
 export const iconMap = {
   github: Github,
@@ -32,7 +32,8 @@ export const socialLinks: SocialLink[] = [
     href: "https://linkedin.com/in/ch-melchiori",
     label: "LinkedIn",
     icon: "linkedin",
-  },  {
+  },
+  {
     href: "https://gitlab.com/jost1x",
     label: "GitLab",
     icon: "gitlab",

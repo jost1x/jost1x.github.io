@@ -8,39 +8,43 @@ const activeId = navItems[0]?.id;
 <div
   data-mobile-backdrop
   aria-hidden="true"
-  class="fixed inset-0 z-100 bg-black/60 backdrop-blur-sm md:hidden transition-opacity duration-300 opacity-0 pointer-events-none"
+  class="pointer-events-none fixed inset-0 z-100 bg-black/60 opacity-0 backdrop-blur-sm transition-opacity duration-300 md:hidden"
 >
 </div>
 
 <div
   data-mobile-menu
-  class="fixed top-0 right-0 h-dvh w-72 bg-linear-to-b from-[oklch(0.12_0.05_250)] to-[oklch(0.08_0.03_250)] border-l border-white/6 p-8 pt-24 z-101 md:hidden overflow-y-auto transition-transform duration-300 ease-out translate-x-full"
+  class="fixed top-0 right-0 z-101 h-dvh w-72 translate-x-full overflow-y-auto border-l border-white/6 bg-linear-to-b from-[oklch(0.12_0.05_250)] to-[oklch(0.08_0.03_250)] p-8 pt-24 transition-transform duration-300 ease-out md:hidden"
 >
   <nav class="flex flex-col gap-2">
-    {navItems.map((item) => (
-      <NavItem
-        id={item.id}
-        label={item.label}
-        variant="mobile"
-        isActive={item.id === activeId}
-      />
-    ))}
+    {
+      navItems.map((item) => (
+        <NavItem
+          id={item.id}
+          label={item.label}
+          variant="mobile"
+          isActive={item.id === activeId}
+        />
+      ))
+    }
   </nav>
 
-  <div class="flex gap-2 mt-8 pt-8 border-t border-white/6">
-    {socialLinks.map((link) => {
-      const Icon = iconMap[link.icon];
-      return (
-        <a
-          href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={link.label}
-          class="p-2.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-white/6 transition-all"
-        >
-          <Icon size={20} />
-        </a>
-      );
-    })}
+  <div class="mt-8 flex gap-2 border-t border-white/6 pt-8">
+    {
+      socialLinks.map((link) => {
+        const Icon = iconMap[link.icon];
+        return (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.label}
+            class="text-muted-foreground hover:text-primary rounded-lg p-2.5 transition-all hover:bg-white/6"
+          >
+            <Icon size={20} />
+          </a>
+        );
+      })
+    }
   </div>
 </div>

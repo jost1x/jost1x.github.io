@@ -1,6 +1,6 @@
 // @ts-check
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
 import htmlBeautifier from "astro-html-beautifier";
 
@@ -13,5 +13,5 @@ export default defineConfig({
   },
 
   integrations: [htmlBeautifier(), react()],
-  site: "https://jost1x.github.io"
+  site: "https://jost1x.github.io",
 });
