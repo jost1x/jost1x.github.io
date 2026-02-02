@@ -1,5 +1,3 @@
-import { Github, Linkedin } from "lucide-react";
-
 export const navItems = [
   { id: "index", label: "Inicio" },
   { id: "about", label: "Sobre mí" },
@@ -8,21 +6,23 @@ export const navItems = [
   { id: "contact", label: "Contacto" },
 ];
 
+export type SocialLinkIcon = "github" | "linkedin";
+
 export interface SocialLink {
   href: string;
   label: string;
-  Icon: React.ComponentType<{ size: number }>;
+  icon: SocialLinkIcon;
 }
 
 export const socialLinks: SocialLink[] = [
   {
     href: "https://github.com/jost1x",
     label: "GitHub",
-    Icon: Github,
+    icon: "github",
   },
   {
     href: "https://linkedin.com/in/ch-melchiori",
     label: "LinkedIn",
-    Icon: Linkedin,
+    icon: "linkedin",
   },
 ];

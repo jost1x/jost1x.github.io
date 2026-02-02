@@ -1,0 +1,26 @@
+---
+const { id, label, variant = "desktop", isActive = false } = Astro.props;
+
+const baseClass = "relative font-medium transition-all duration-300";
+const variantClass =
+  variant === "mobile"
+    ? "px-4 py-3 text-sm rounded-xl text-left"
+    : "px-4 py-2 text-[13px] rounded-full";
+const activeClass = "text-primary bg-white/8";
+const inactiveClass =
+  "text-muted-foreground hover:text-foreground hover:bg-white/4";
+const className = `${baseClass} ${variantClass} ${
+  isActive ? activeClass : inactiveClass
+}`;
+---
+
+<button
+  type="button"
+  data-nav-item
+  data-target={id}
+  data-active-on={activeClass}
+  data-active-off={inactiveClass}
+  class={className}
+>
+  {label}
+</button>

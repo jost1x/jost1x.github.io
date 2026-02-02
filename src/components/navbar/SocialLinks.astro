@@ -1,0 +1,24 @@
+---
+import { Github, Linkedin } from "@lucide/astro";
+import { socialLinks } from "./data";
+
+const iconMap = {
+  github: Github,
+  linkedin: Linkedin,
+};
+---
+
+<div class="hidden md:flex items-center gap-1">
+  {socialLinks.map((link) => {
+    const Icon = iconMap[link.icon];
+    return (
+      <a
+        href={link.href}
+        aria-label={link.label}
+        class="p-2 rounded-lg text-muted-foreground transition-all duration-300 hover:text-primary hover:bg-white/6"
+      >
+        <Icon size={20} />
+      </a>
+    );
+  })}
+</div>

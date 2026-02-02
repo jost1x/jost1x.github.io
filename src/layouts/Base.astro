@@ -1,6 +1,6 @@
 ---
 import MainContent from "@/components/Content.astro";
-import { Navbar } from "@/components/navbar/Navbar";
+import Navbar from "@/components/navbar/Navbar.astro";
 import SEOComponent from "@/components/SEOComponent.astro";
 import "@/styles/global.css";
 
@@ -17,7 +17,7 @@ const { title } = Astro.props;
   </head>
   <body class="font-sans antialiased">
     <div id="app" class="relative w-full">
-      <Navbar client:load />
+      <Navbar />
       <MainContent />
       <slot />
     </div>

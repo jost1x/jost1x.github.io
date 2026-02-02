@@ -1,0 +1,142 @@
+---
+import DesktopNav from "./DesktopNav.astro";
+import Logo from "./Logo.astro";
+import MobileMenu from "./MobileMenu.astro";
+import MobileMenuButton from "./MobileMenuButton.astro";
+import SocialLinks from "./SocialLinks.astro";
+---
+
+<header
+  data-navbar
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-5 bg-transparent"
+  data-scroll-on="py-3 bg-gradient-to-r from-[oklch(0.10_0.04_250/0.9)] to-[oklch(0.08_0.035_250/0.85)] backdrop-blur-xl border-b border-white/6"
+  data-scroll-off="py-5 bg-transparent"
+>
+  <div class="max-w-5xl mx-auto px-6 flex items-center justify-between">
+    <Logo />
+
+    <DesktopNav />
+
+    <div class="flex items-center gap-2">
+      <SocialLinks />
+      <MobileMenuButton />
+    </div>
+  </div>
+</header>
+
+<MobileMenu />
+
+<script>
+  const initNavbar = () => {
+    const root = document.querySelector<HTMLElement>("[data-navbar]");
+    if (!root || root.dataset.initialized === "true") return;
+    root.dataset.initialized = "true";
+
+    const scrollTargets = document.querySelectorAll<HTMLElement>("[data-scroll-on]");
+
+    const applyScrollState = (scrolled) => {
+      scrollTargets.forEach((el) => {
+        const on = (el.dataset.scrollOn || "").split(" ").filter(Boolean);
+        const off = (el.dataset.scrollOff || "").split(" ").filter(Boolean);
+        if (scrolled) {
+          el.classList.add(...on);
+          el.classList.remove(...off);
+        } else {
+          el.classList.add(...off);
+          el.classList.remove(...on);
+        }
+      });
+    };
+
+    const handleScroll = () => applyScrollState(window.scrollY > 20);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    const navItems = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-nav-item]")
+    );
+
+    const setActive = (id) => {
+      navItems.forEach((item) => {
+        const isActive = item.dataset.target === id;
+        const on = (item.dataset.activeOn || "").split(" ").filter(Boolean);
+        const off = (item.dataset.activeOff || "").split(" ").filter(Boolean);
+        if (isActive) {
+          item.classList.add(...on);
+          item.classList.remove(...off);
+        } else {
+          item.classList.add(...off);
+          item.classList.remove(...on);
+        }
+      });
+    };
+
+    const initialId = navItems[0]?.dataset.target;
+    if (initialId) setActive(initialId);
+
+    const mobileMenu = document.querySelector("[data-mobile-menu]");
+    const mobileBackdrop = document.querySelector("[data-mobile-backdrop]");
+    const mobileToggle = document.querySelector("[data-mobile-toggle]");
+    const iconOpen = document.querySelector("[data-icon-open]");
+    const iconClosed = document.querySelector("[data-icon-closed]");
+
+    const setMobileOpen = (open) => {
+      if (mobileMenu) {
+        mobileMenu.classList.toggle("translate-x-0", open);
+        mobileMenu.classList.toggle("translate-x-full", !open);
+      }
+      if (mobileBackdrop) {
+        mobileBackdrop.classList.toggle("opacity-100", open);
+        mobileBackdrop.classList.toggle("pointer-events-auto", open);
+        mobileBackdrop.classList.toggle("opacity-0", !open);
+        mobileBackdrop.classList.toggle("pointer-events-none", !open);
+      }
+      if (iconOpen && iconClosed) {
+        iconOpen.classList.toggle("hidden", !open);
+        iconClosed.classList.toggle("hidden", open);
+      }
+      if (mobileToggle) {
+        mobileToggle.setAttribute(
+          "aria-label",
+          open ? "Cerrar menú" : "Abrir menú"
+        );
+      }
+      document.body.style.overflow = open ? "hidden" : "";
+    };
+
+    setMobileOpen(false);
+
+    mobileToggle?.addEventListener("click", () => {
+      const isOpen = mobileMenu?.classList.contains("translate-x-0");
+      setMobileOpen(!isOpen);
+    });
+
+    mobileBackdrop?.addEventListener("click", () => setMobileOpen(false));
+
+    const navigateTo = (id) => {
+      setActive(id);
+      setMobileOpen(false);
+      const target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+
+    navItems.forEach((item) => {
+      item.addEventListener("click", (event) => {
+        event.preventDefault();
+        const id = item.dataset.target;
+        if (id) navigateTo(id);
+      });
+    });
+
+    const logo = document.querySelector("[data-logo]");
+    logo?.addEventListener("click", (event) => {
+      event.preventDefault();
+      navigateTo("index");
+    });
+  };
+
+  document.addEventListener("astro:page-load", initNavbar);
+  document.addEventListener("DOMContentLoaded", initNavbar);
+</script>
