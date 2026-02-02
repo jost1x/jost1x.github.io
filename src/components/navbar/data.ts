@@ -1,4 +1,4 @@
-import { Github, Linkedin } from "@lucide/astro";
+import { Github, Gitlab, Linkedin } from "@lucide/astro";
 
 export const navItems = [
   { id: "index", label: "Inicio" },
@@ -13,7 +13,7 @@ export type SocialLinkIcon = "github" | "linkedin"| "gitlab";
 export const iconMap = {
   github: Github,
   linkedin: Linkedin,
-  gitlab: Linkedin,
+  gitlab: Gitlab,
 };
 
 export interface SocialLink {
