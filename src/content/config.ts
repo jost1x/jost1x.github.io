@@ -25,7 +25,22 @@ const experience = defineCollection({
   }),
 });
 
+const projects = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    category: z.string(),
+    startDate: z.date(),
+    endDate: z.date().nullable(),
+    summary: z.string().max(180),
+    image: z.string().optional(),
+    tags: z.array(z.string()).default([]),
+    url: z.string().url().optional(),
+  }),
+});
+
 export const collections = {
   skills,
   experience,
+  projects,
 };
