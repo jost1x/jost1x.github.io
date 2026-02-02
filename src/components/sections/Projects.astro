@@ -31,7 +31,7 @@ const isBig = (project) => {
 ---
 
 <section id="projects" class="py-32 px-6">
-  <div class="max-w-6xl mx-auto">
+  <div class="max-w-5xl mx-auto">
     <p class="text-primary text-xs tracking-[0.2em] uppercase mb-4">
       Proyectos
     </p>
@@ -41,7 +41,7 @@ const isBig = (project) => {
     </h2>
 
     <!-- Bento grid -->
-    <div class="grid grid-cols-1 md:grid-cols-4 auto-rows-[220px] gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 auto-rows-[150px] gap-4">
       {projects.map((project) => {
         const big = isBig(project);
         const hasImage = !!project.data.image;
