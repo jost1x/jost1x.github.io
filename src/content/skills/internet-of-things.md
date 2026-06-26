@@ -7,6 +7,8 @@ keywords:
   - Sigfox
   - Zigbee
   - NodeRED
+  - EMQX
+  - NATS
 ---
 
 Experiencia en diseño y despliegue de soluciones IoT,

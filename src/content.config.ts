@@ -1,7 +1,9 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
+import { glob } from "astro/loaders";
 
 const skills = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "*.md", base: "./src/content/skills" }),
   schema: z.object({
     name: z.string(),
     icon: z.string().optional(),
@@ -13,7 +15,7 @@ const skills = defineCollection({
 });
 
 const experience = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "*.md", base: "./src/content/experience" }),
   schema: z.object({
     company: z.string(),
     position: z.string(),
@@ -21,12 +23,12 @@ const experience = defineCollection({
     startDate: z.date(),
     endDate: z.date().nullable(),
     summary: z.string().max(180),
-    website: z.string().url().optional(),
+    website: z.url().optional(),
   }),
 });
 
 const projects = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "*.md", base: "./src/content/projects" }),
   schema: z.object({
     title: z.string(),
     category: z.string(),
@@ -35,12 +37,12 @@ const projects = defineCollection({
     summary: z.string().max(180),
     image: z.string().optional(),
     tags: z.array(z.string()).default([]),
-    url: z.string().url().optional(),
+    url: z.url().optional(),
   }),
 });
 
 const education = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "*.md", base: "./src/content/education" }),
   schema: z.object({
     institution: z.string(),
     degree: z.string(),
@@ -53,13 +55,13 @@ const education = defineCollection({
 });
 
 const certifications = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "*.md", base: "./src/content/certifications" }),
   schema: z.object({
     title: z.string(),
     issuer: z.string(),
     date: z.date(),
     category: z.enum(["cloud", "data", "development", "management"]),
-    credentialUrl: z.string().url().optional(),
+    credentialUrl: z.url().optional(),
   }),
 });
 
@@ -68,5 +70,5 @@ export const collections = {
   experience,
   projects,
   education,
-  certifications
+  certifications,
 };

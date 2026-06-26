@@ -5,5 +5,6 @@ hidden: false
 level: 0
 keywords:
   - Docker
+  - Docker Compose
   - Podman
 ---

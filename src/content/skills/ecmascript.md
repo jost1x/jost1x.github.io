@@ -11,4 +11,6 @@ keywords:
   - TypeScript
   - React Router v7
   - Next JS
+  - Fastify
+  - TanStack
 ---

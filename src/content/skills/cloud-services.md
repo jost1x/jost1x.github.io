@@ -8,4 +8,5 @@ keywords:
   - Google Cloud Platform
   - Digital Ocean
   - Oracle Server
+  - Grafana
 ---
