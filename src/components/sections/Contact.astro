@@ -1,28 +1,40 @@
 ---
 import { MapPin } from "@lucide/astro";
+import Reveal from "@/components/Reveal.astro";
 ---
 
-<section id="contact" class="px-6 py-32">
+<section id="contact" class="px-6 py-32" aria-labelledby="contact-heading">
   <div class="mx-auto max-w-5xl">
-    <p class="text-primary mb-4 text-xs tracking-[0.2em] uppercase">Contacto</p>
-    <h2 class="text-foreground mb-6 text-2xl font-medium md:text-3xl">
-      Hablemos
-    </h2>
-    <p class="text-muted-foreground mb-8 max-w-md text-base">
-      Abierto a nuevas oportunidades y colaboraciones en IoT, desarrollo de
-      sistemas y soluciones industriales.
-    </p>
-    <div class="flex flex-col gap-3">
-      <a
-        href="mailto:charlie.melchiorip@gmail.com"
-        class="text-foreground hover:text-primary transition-colors duration-300"
-      >
-        charlie.melchiorip@gmail.com
-      </a>
-      <div class="text-muted-foreground flex items-center gap-2 text-sm">
-        <MapPin class="h-4 w-4" />
-        Cerrillos, Santiago, Chile
+    <Reveal>
+      <p id="contact-heading" class="text-primary mb-4 text-xs tracking-[0.2em] uppercase">Contacto</p>
+    </Reveal>
+
+    <Reveal delay={100}>
+      <h2 class="text-foreground mb-6 text-2xl font-medium md:text-3xl">
+        Hablemos
+      </h2>
+    </Reveal>
+
+    <Reveal delay={200}>
+      <p class="text-muted-foreground mb-8 max-w-md text-base">
+        Abierto a nuevas oportunidades y colaboraciones en IoT, desarrollo de
+        sistemas y soluciones industriales.
+      </p>
+    </Reveal>
+
+    <Reveal delay={300}>
+      <div class="flex flex-col gap-3">
+        <a
+          href="mailto:charlie.melchiorip@gmail.com"
+          class="text-foreground hover:text-primary transition-colors duration-300"
+        >
+          charlie.melchiorip@gmail.com
+        </a>
+        <div class="text-muted-foreground flex items-center gap-2 text-sm">
+          <MapPin class="h-4 w-4" aria-hidden="true" />
+          <address class="not-italic">Cerrillos, Santiago, Chile</address>
+        </div>
       </div>
-    </div>
+    </Reveal>
   </div>
 </section>

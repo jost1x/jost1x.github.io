@@ -1,7 +1,6 @@
 ---
-"use client";
-
 import { FileText, Github, Gitlab, Linkedin, Mail } from "@lucide/astro";
+import Reveal from "@/components/Reveal.astro";
 
 const socialLinks = [
   {
@@ -27,76 +26,88 @@ const socialLinks = [
 ];
 ---
 
-<section id="index" class="flex min-h-screen items-center px-6 pt-20">
+<section id="index" class="flex min-h-screen items-center px-6 pt-20" aria-label="Presentacion principal">
   <div class="mx-auto w-full max-w-5xl">
     {/* Greeting */}
-    <p class="text-muted-foreground mb-4 text-lg md:text-xl">Hola, Soy</p>
+    <Reveal delay={0}>
+      <p class="text-muted-foreground mb-4 text-lg md:text-xl">Hola, Soy</p>
+    </Reveal>
 
     {/* Name with badge */}
-    <div class="mb-6 flex flex-wrap items-center gap-4">
-      <h1
-        class="text-foreground text-4xl font-semibold md:text-5xl lg:text-6xl"
-      >
-        Charlie Melchiori
-      </h1>
-      <span
-        class="text-foreground inline-flex items-center gap-2 rounded-full border border-white/8 bg-white/8 px-3 py-1.5 text-xs backdrop-blur-sm"
-      >
-        <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-400"></span>
-        Disponible
-      </span>
-    </div>
+    <Reveal delay={100}>
+      <div class="mb-6 flex flex-wrap items-center gap-4">
+        <h1
+          class="text-foreground text-4xl font-semibold md:text-5xl lg:text-6xl"
+        >
+          Charlie Melchiori
+        </h1>
+        <span
+          class="text-foreground inline-flex items-center gap-2 rounded-full border border-white/8 bg-white/8 px-3 py-1.5 text-xs backdrop-blur-sm"
+          role="status"
+        >
+          <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-400"></span>
+          Disponible
+        </span>
+      </div>
+    </Reveal>
 
     {/* Description with highlighted words */}
-    <p
-      class="text-muted-foreground mb-8 max-w-2xl text-base leading-relaxed md:text-lg"
-    >
-      <span
-        class="bg-primary/20 text-primary border-primary/30 mr-1 inline-flex items-center rounded-md border px-2.5 py-0.5 font-medium"
+    <Reveal delay={200}>
+      <p
+        class="text-muted-foreground mb-8 max-w-2xl text-base leading-relaxed md:text-lg"
       >
-        Ingeniero Civil Electrónico
-      </span>
-      , apasionado por la informática y la tecnología. Este portafolio refleja un
-      compromiso con la{" "}
-      <span
-        class="inline-flex items-center rounded-md border border-emerald-500/30 bg-emerald-500/20 px-2 py-0.5 font-medium text-emerald-400"
-      >
-        excelencia
-      </span>
-      {" "}y la{" "}
-      <span
-        class="inline-flex items-center rounded-md border border-amber-500/30 bg-amber-500/20 px-2 py-0.5 font-medium text-amber-400"
-      >
-        innovación
-      </span>
-      . Explora los diferentes proyectos para conocer más sobre mi trayectoria profesional.
-    </p>
+        <span
+          class="bg-primary/20 text-primary border-primary/30 mr-1 inline-flex items-center rounded-md border px-2.5 py-0.5 font-medium"
+        >
+          Ingeniero Civil Electronico
+        </span>
+        , apasionado por la informatica y la tecnologia. Este portafolio refleja un
+        compromiso con la{" "}
+        <span
+          class="inline-flex items-center rounded-md border border-emerald-500/30 bg-emerald-500/20 px-2 py-0.5 font-medium text-emerald-400"
+        >
+          excelencia
+        </span>
+        {" "}y la{" "}
+        <span
+          class="inline-flex items-center rounded-md border border-amber-500/30 bg-amber-500/20 px-2 py-0.5 font-medium text-amber-400"
+        >
+          innovacion
+        </span>
+        . Explora los diferentes proyectos para conocer mas sobre mi trayectoria profesional.
+      </p>
+    </Reveal>
 
     {/* CV Button */}
-    <a
-      href="https://rxresu.me/jost1x/charlie-melchiori-ing-cvl-electronico"
-      target="_blank"
-      class="text-foreground hover:border-primary/20 mb-10 inline-flex items-center gap-2 rounded-xl border border-white/6 bg-white/3 px-6 py-3 text-sm font-medium backdrop-blur-md transition-all duration-300 hover:bg-white/6"
-    >
-      <FileText class="h-4 w-4" />
-      Ver Currículum
-    </a>
+    <Reveal delay={300}>
+      <a
+        href="https://rxresu.me/jost1x/charlie-melchiori-ing-cvl-electronico"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-foreground hover:border-primary/20 mb-10 inline-flex items-center gap-2 rounded-xl border border-white/6 bg-white/3 px-6 py-3 text-sm font-medium backdrop-blur-md transition-all duration-300 hover:bg-white/6"
+      >
+        <FileText class="h-4 w-4" aria-hidden="true" />
+        Ver Curriculum
+      </a>
+    </Reveal>
 
     {/* Social Links */}
-    <div class="flex items-center gap-4">
-      {
-        socialLinks.map((link) => (
-          <a
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={link.label}
-            class="text-muted-foreground hover:border-primary/20 rounded-xl border border-white/6 bg-white/3 p-3 backdrop-blur-md transition-all duration-300 hover:bg-white/7"
-          >
-            {<link.icon />}
-          </a>
-        ))
-      }
-    </div>
+    <Reveal delay={400}>
+      <div class="flex items-center gap-4" aria-label="Redes sociales">
+        {
+          socialLinks.map((link) => (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={link.label}
+              class="text-muted-foreground hover:border-primary/20 rounded-xl border border-white/6 bg-white/3 p-3 backdrop-blur-md transition-all duration-300 hover:bg-white/7"
+            >
+              {<link.icon aria-hidden="true" />}
+            </a>
+          ))
+        }
+      </div>
+    </Reveal>
   </div>
 </section>

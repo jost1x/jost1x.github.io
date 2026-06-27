@@ -1,19 +1,17 @@
-FROM oven/bun:1 as builder
-
-WORKDIR /builder
-
-COPY . /builder
-
-RUN bun install && bun run build
-
-FROM node:19-bullseye
-
-COPY --from=builder /builder/dist /app
-
-RUN yarn global add serve
+FROM oven/bun:1-alpine AS builder
 
 WORKDIR /app
 
-EXPOSE 3000
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile
 
-CMD [ "serve", "-s"]
+COPY . .
+RUN bun run build
+
+FROM nginx:alpine
+
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

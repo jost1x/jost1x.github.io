@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import * as Icons from "@lucide/astro";
+import Reveal from "@/components/Reveal.astro";
 
 const skills = await getCollection("skills", ({ data }) => !data.hidden);
 
@@ -12,49 +13,58 @@ const getSizeClasses = (count: number) => {
 };
 ---
 
-<section id="about" class="px-6 py-24">
+<section id="about" class="px-6 py-24" aria-labelledby="about-heading">
   <div class="mx-auto max-w-5xl">
-    <p class="text-primary mb-4 text-xs tracking-[0.2em] uppercase">Sobre mí</p>
+    <Reveal>
+      <p id="about-heading" class="text-primary mb-4 text-xs tracking-[0.2em] uppercase">Sobre mi</p>
+    </Reveal>
 
-    <p class="text-muted-foreground mb-10 max-w-2xl text-base leading-relaxed">
-      Profesional con experiencia en diseño, desarrollo y despliegue de sistemas
-      IoT. Apasionado por la tecnología y comprometido con el desarrollo de
-      soluciones disruptivas que transforman la interacción con el mundo
-      conectado.
-    </p>
+    <Reveal delay={100}>
+      <p class="text-muted-foreground mb-10 max-w-2xl text-base leading-relaxed">
+        Profesional con experiencia en diseno, desarrollo y despliegue de sistemas
+        IoT. Apasionado por la tecnologia y comprometido con el desarrollo de
+        soluciones disruptivas que transforman la interaccion con el mundo
+        conectado.
+      </p>
+    </Reveal>
 
-    <div
-      class="grid grid-flow-dense auto-rows-fr grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4"
-    >
-      {
-        skills.map((skill) => {
-          const Icon =
-            skill.data.icon && Icons[skill.data.icon]
-              ? Icons[skill.data.icon]
-              : Icons.HelpCircle;
+    <Reveal delay={200}>
+      <div
+        class="grid grid-flow-dense auto-rows-fr grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4"
+        role="list"
+        aria-label="Habilidades tecnicas"
+      >
+        {
+          skills.map((skill) => {
+            const Icon =
+              skill.data.icon && Icons[skill.data.icon]
+                ? Icons[skill.data.icon]
+                : Icons.HelpCircle;
 
-          return (
-            <div
-              class={`hover:border-primary/20 flex flex-col gap-2 rounded-xl border border-white/6 bg-white/3 backdrop-blur-md transition-all duration-300 hover:bg-white/6 ${getSizeClasses(skill.data.keywords.length)} `}
-            >
-              <h3 class="text-foreground text-md flex items-center gap-2 leading-tight font-medium">
-                <div class="bg-primary/10 text-primary w-fit rounded-md p-2">
-                  <Icon size={16} stroke-width={1.75} />
-                </div>
-                <span>{skill.data.name}</span>
-              </h3>
+            return (
+              <div
+                class={`hover:border-primary/20 flex flex-col gap-2 rounded-xl border border-white/6 bg-white/3 backdrop-blur-md transition-all duration-300 hover:bg-white/6 ${getSizeClasses(skill.data.keywords.length)} `}
+                role="listitem"
+              >
+                <h3 class="text-foreground text-md flex items-center gap-2 leading-tight font-medium">
+                  <div class="bg-primary/10 text-primary w-fit rounded-md p-2">
+                    <Icon size={16} stroke-width={1.75} aria-hidden="true" />
+                  </div>
+                  <span>{skill.data.name}</span>
+                </h3>
 
-              <ul class="flex flex-wrap gap-2">
-                {skill.data.keywords.map((k) => (
-                  <li class="rounded-md border border-white/6 bg-white/4 px-2 text-xs text-white/70">
-                    {k}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          );
-        })
-      }
-    </div>
+                <ul class="flex flex-wrap gap-2" aria-label={`Tecnologias de ${skill.data.name}`}>
+                  {skill.data.keywords.map((k) => (
+                    <li class="rounded-md border border-white/6 bg-white/4 px-2 text-xs text-white/70">
+                      {k}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })
+        }
+      </div>
+    </Reveal>
   </div>
 </section>

@@ -1,5 +1,5 @@
 ---
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "@lucide/astro";
 
 const socialLinks = [
   {
@@ -20,25 +20,27 @@ const socialLinks = [
 ];
 ---
 
-<footer class="border-t border-white/6 px-6 py-8">
+<footer class="border-t border-white/6 px-6 py-8" role="contentinfo">
   <div
     class="text-muted-foreground mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 text-xs sm:flex-row"
   >
-    <p>2026 Charlie Melchiori</p>
-    <div class="flex items-center gap-4">
-      {
-        socialLinks.map((link) => (
-          <a
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={link.label}
-            class="hover:text-primary transition-colors duration-300"
-          >
-            {<link.icon />}
-          </a>
-        ))
-      }
-    </div>
+    <p>&copy; 2026 Charlie Melchiori</p>
+    <nav aria-label="Redes sociales">
+      <div class="flex items-center gap-4">
+        {
+          socialLinks.map((link) => (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={link.label}
+              class="hover:text-primary transition-colors duration-300"
+            >
+              {<link.icon aria-hidden="true" />}
+            </a>
+          ))
+        }
+      </div>
+    </nav>
   </div>
 </footer>

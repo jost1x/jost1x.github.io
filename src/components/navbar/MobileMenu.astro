@@ -14,9 +14,12 @@ const activeId = navItems[0]?.id;
 
 <div
   data-mobile-menu
+  role="dialog"
+  aria-modal="true"
+  aria-label="Menu de navegacion"
   class="fixed top-0 right-0 z-101 h-dvh w-72 translate-x-full overflow-y-auto border-l border-white/6 bg-linear-to-b from-[oklch(0.12_0.05_250)] to-[oklch(0.08_0.03_250)] p-8 pt-24 transition-transform duration-300 ease-out md:hidden"
 >
-  <nav class="flex flex-col gap-2">
+  <nav class="flex flex-col gap-2" aria-label="Navegacion principal">
     {
       navItems.map((item) => (
         <NavItem
@@ -41,7 +44,7 @@ const activeId = navItems[0]?.id;
             aria-label={link.label}
             class="text-muted-foreground hover:text-primary rounded-lg p-2.5 transition-all hover:bg-white/6"
           >
-            <Icon size={20} />
+            <Icon size={20} aria-hidden="true" />
           </a>
         );
       })

@@ -1,0 +1,66 @@
+---
+interface Props {
+  delay?: number;
+  direction?: "up" | "down" | "left" | "right" | "none";
+  duration?: number;
+  threshold?: number;
+  once?: boolean;
+  class?: string;
+  tag?: "div" | "section" | "article" | "p" | "h1" | "h2" | "h3" | "h4" | "span";
+}
+
+const {
+  delay = 0,
+  direction = "up",
+  duration = 600,
+  threshold = 0.1,
+  once = true,
+  class: className = "",
+  tag = "div",
+} = Astro.props;
+
+const Tag = tag;
+const id = `reveal-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+<Tag
+  id={id}
+  class={`reveal ${className}`}
+  data-reveal
+  data-direction={direction}
+  data-threshold={threshold}
+  data-once={once}
+  style={`--delay: ${delay}ms; --duration: ${duration}ms;`}
+>
+  <slot />
+</Tag>
+
+<script>
+  const initReveal = () => {
+    const elements = document.querySelectorAll<HTMLElement>("[data-reveal]");
+    if (!elements.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-visible");
+            if (entry.target.dataset.once === "true") {
+              observer.unobserve(entry.target);
+            }
+          } else if (entry.target.dataset.once !== "true") {
+            entry.target.classList.remove("reveal-visible");
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+
+    elements.forEach((el) => {
+      observer.observe(el);
+    });
+  };
+
+  document.addEventListener("astro:page-load", initReveal);
+  document.addEventListener("DOMContentLoaded", initReveal);
+</script>

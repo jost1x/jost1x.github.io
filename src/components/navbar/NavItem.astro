@@ -18,6 +18,7 @@ const className = `${baseClass} ${variantClass} ${isActive ? activeClass : inact
   data-active-on={activeClass}
   data-active-off={inactiveClass}
   class={className}
+  aria-current={isActive ? "page" : undefined}
 >
   {label}
 </button>
