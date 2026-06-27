@@ -1,6 +1,6 @@
 ---
-import { Calendar } from "@lucide/astro";
 import { getCollection } from "astro:content";
+import { Calendar } from "@lucide/astro";
 
 const experience = (await getCollection("experience")).sort(
   (a, b) => b.data.startDate.getTime() - a.data.startDate.getTime(),

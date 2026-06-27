@@ -7,11 +7,8 @@ const variantClass =
     ? "px-4 py-3 text-sm rounded-xl text-left"
     : "px-4 py-2 text-[13px] rounded-full";
 const activeClass = "text-primary bg-white/8";
-const inactiveClass =
-  "text-muted-foreground hover:text-foreground hover:bg-white/4";
-const className = `${baseClass} ${variantClass} ${
-  isActive ? activeClass : inactiveClass
-}`;
+const inactiveClass = "text-muted-foreground hover:text-foreground hover:bg-white/4";
+const className = `${baseClass} ${variantClass} ${isActive ? activeClass : inactiveClass}`;
 ---
 
 <button

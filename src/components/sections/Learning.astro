@@ -1,13 +1,13 @@
 ---
-import { Calendar } from "@lucide/astro";
 import { getCollection } from "astro:content";
+import { Calendar } from "@lucide/astro";
 
 const education = (await getCollection("education")).sort(
-  (a, b) => b.data.startDate.getTime() - a.data.startDate.getTime()
+  (a, b) => b.data.startDate.getTime() - a.data.startDate.getTime(),
 );
 
 const certifications = (await getCollection("certifications")).sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
 );
 
 const formatDate = (date) =>

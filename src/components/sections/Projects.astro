@@ -12,8 +12,7 @@ const images = import.meta.glob("/src/assets/*.{png,jpg,jpeg,webp,avif}", {
   eager: true,
 });
 
-const getImageByPath = (path) =>
-  (images[`/src/assets/${path}`] as any)?.default;
+const getImageByPath = (path) => (images[`/src/assets/${path}`] as any)?.default;
 
 // solo 2 proyectos grandes
 let bigUsed = 0;

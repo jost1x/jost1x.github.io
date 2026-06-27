@@ -1,6 +1,6 @@
 ---
-import * as Icons from "@lucide/astro";
 import { getCollection } from "astro:content";
+import * as Icons from "@lucide/astro";
 
 const skills = await getCollection("skills", ({ data }) => !data.hidden);
 
