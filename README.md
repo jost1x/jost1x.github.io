@@ -1,43 +1,71 @@
-# Astro Starter Kit: Minimal
+# Charlie Melchiori — Portafolio Personal
 
-```sh
-bun create astro@latest -- --template minimal
+> Ingeniero Civil Electrónico | IoT & Tecnología
+
+Portafolio profesional que refleja mi trayectoria en diseño, desarrollo y despliegue de sistemas IoT. Comprometido con soluciones disruptivas que transforman la interacción con el mundo conectado.
+
+🟢 **Disponible** para nuevas oportunidades
+
+## 🔗 Conectemos
+
+- [GitHub](https://github.com/jost1x)
+- [GitLab](https://gitlab.com/jost1x)
+- [LinkedIn](https://linkedin.com/in/ch-melchiorip)
+- [Email](mailto:charlie.melchiorip@gmail.com)
+- [Currículum](https://rxresu.me/jost1x/charlie-melchiori-ing-cvl-electronico)
+
+## 📄 Secciones
+
+| Sección | Descripción |
+|---------|-------------|
+| **Hero** | Presentación principal con badge de disponibilidad |
+| **Sobre mí** | Skills organizados en grid interactivo |
+| **Experiencia** | Trayectoria profesional |
+| **Proyectos** | Portfolio de trabajos destacados |
+| **Aprendizaje** | Formación y desarrollo continuo |
+| **Contacto** | Formulario y links de contacto |
+
+## 🛠️ Stack
+
+| Categoría | Tecnologías |
+|-----------|-------------|
+| **Framework** | Astro 7.0 |
+| **Estilos** | TailwindCSS v4 |
+| **Componentes** | React 19 |
+| **Iconos** | Lucide |
+| **Linting** | Biome |
+
+## 🚀 Desarrollo
+
+```bash
+# Instalar dependencias
+bun install
+
+# Servidor de desarrollo (localhost:4321)
+bun dev
+
+# Build de producción
+bun build
+
+# Preview del build
+bun preview
+
+# Linting y formateo
+bun lint
+bun format
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 📁 Estructura
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command               | Action                                           |
-| :-------------------- | :----------------------------------------------- |
-| `bun install`         | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+src/
+├── components/
+│   ├── navbar/        # Logo, navegación, menú mobile
+│   └── sections/      # Hero, About, Experience, Projects, Learning, Contact, Footer
+├── content/
+│   └── skills/        # Skills configurables via content collection
+├── layouts/
+│   └── Base.astro     # Layout principal
+└── pages/
+    └── index.astro    # Página principal
+```
